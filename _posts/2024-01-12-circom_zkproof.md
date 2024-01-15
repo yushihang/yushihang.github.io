@@ -100,17 +100,47 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
   ```circom
   pragma circom 2.0.0;
+
   template AgeProof() {
-    signal birthday;
-    signal today;
-    signal isAdult;
+    signal input age;
+    signal input ageLimit;
+    signal output difference;
 
-    birthday <== $private;
-    today <== $public;
-    isAdult <== (today - birthday >= 18 * 365);
-
-    isAdult == true;
+    difference <== age - ageLimit;
   }
 
-  component main = AgeProof();
+  component main {public[ageLimit]} = AgeProof();
+
   ```
+
+  这个文件演示了用零知识证明来证明一个人的年龄是否大于某个年龄限制，并且不泄露此人的具体年龄。
+
+  (需要说明的是，这个例子比较简单，可能存在验证漏洞，主要只是为了说明 Circom 的使用方法)
+
+### 编译 AgeProof.circom
+
+```shell
+circom AgeProof.circom --r1cs --wasm --sym --c
+```
+
+相关的参数含义见[链接](https://docs.circom.io/getting-started/compiling-circuits/)
+
+输出信息为
+
+```shell
+
+template instances: 1
+non-linear constraints: 0
+linear constraints: 0
+public inputs: 1
+private inputs: 1 (none belong to witness)
+public outputs: 1
+wires: 3
+labels: 4
+Written successfully: ./AgeProof.r1cs
+Written successfully: ./AgeProof.sym
+Written successfully: ./AgeProof_cpp/AgeProof.cpp and ./AgeProof_cpp/AgeProof.dat
+Written successfully: ./AgeProof_cpp/main.cpp, circom.hpp, calcwit.hpp, calcwit.cpp, fr.hpp, fr.cpp, fr.asm and Makefile
+Written successfully: ./AgeProof_js/AgeProof.wasm
+Everything went okay
+```
