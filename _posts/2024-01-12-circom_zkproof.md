@@ -639,9 +639,13 @@ snarkjs groth16 prove AgeProof_0001.zkey witness.wtns proof.json public.json
 
   <span style="color: #00AAAA;">
   在实际使用时 private input age 会和其他数据一起在 zkproof 中被其他公私钥对签名, 以确保不会被篡改。
+    </span>
 
+  <span style="color: #00AAAA;">
   这样可以避免 prover 随意输入自己的 age 就能通过 verifier 验证的情况。
+   </span>
 
+  <span style="color: #00AAAA;">
   详见后续的 DID 相关学习记录。
   </span>
 
