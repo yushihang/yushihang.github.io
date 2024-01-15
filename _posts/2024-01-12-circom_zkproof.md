@@ -12,8 +12,6 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
 ### 搭建 Circom 开发环境
 
-- VSCode 里有一些 extension, 从下载数看用的人不多, 如果有适合 Circom 的 extension, 请告诉我
-
 - 安装 rustup
 
   ```shell
@@ -90,3 +88,29 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
   ```
 
   snarkjs 可以从 circom 产出的文件中生成和验证 ZKProof(零知识证明)。也可以输出对应的 solidity 代码，用于部署到以太坊上完成验证 ZKProof 的工作。
+
+- 关于开发环境
+  VSCode 里有一些 extension, 从下载数看用的人不多。
+
+  如果有适合 Circom 的 extension, 请告诉我
+
+### 编写 Circom 代码
+
+- 新建一个名为 AgeProof.circom 的文件, 内容如下:
+
+  ```circom
+  pragma circom 2.0.0;
+  template AgeProof() {
+    signal birthday;
+    signal today;
+    signal isAdult;
+
+    birthday <== $private;
+    today <== $public;
+    isAdult <== (today - birthday >= 18 * 365);
+
+    isAdult == true;
+  }
+
+  component main = AgeProof();
+  ```
