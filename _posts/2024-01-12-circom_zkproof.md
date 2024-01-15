@@ -12,7 +12,7 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
 [<==和<---的区别(赋值了为什么还需要约束)](https://github.com/0xPARC/zk-bug-tracker#8-assigned-but-not-constrained)
 
-[一篇很不错的科普](https://medium.com/@VitalikButerin/quadratic-arithmetic-programs-from-zero-to-hero-f6d558cea649#5539)
+[一篇很不错的科普](https://dev.to/spalladino/a-beginners-intro-to-coding-zero-knowledge-proofs-c56#:%7E:text=For%20instance%2C%20Circom%20only%20allows,be%20the%20set%20of%20constraints)
 
 ---
 
