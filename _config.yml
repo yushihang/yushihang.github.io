@@ -40,7 +40,7 @@ author: yushihang@github
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "2024-{currentYear} {author}"
+copyright: "2023-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
   My study records.
@@ -71,7 +71,7 @@ yat:
 # sitemap: false
 
 # If you want to change site language, you can set lang option
-# lang: "en"  # default lang is en
+lang: "zh-CN" # default lang is en
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
@@ -137,11 +137,11 @@ yat:
 
 # Code badge setting
 # You can enable or disable the code badge and so on
-# code_badge:
-#   enabled: "true"
-#   color: "#fff"
-#   background_color: "#ff4e00"
-#   text_transform: "uppercase"  # ("uppercase", "lowercase", "capitalize")
+code_badge:
+  enabled: "true"
+  color: "#fff"
+  background_color: "#aaacfa"
+  text_transform: "lowercase" # ("uppercase", "lowercase", "capitalize")
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
@@ -197,12 +197,12 @@ yat:
 # See https://utteranc.es/
 # set follow_site_theme true to make utterances' theme follow the site's
 
-# utterances:
-#   repo: "owner/repo"
-#   issue_term: "title"
-#   label: "utterances comment"
-#   theme: "github-light"
-#   follow_site_theme: true
+utterances:
+  repo: "yushihang/yushihang.github.io"
+  issue_term: "title"
+  label: "utterances comment"
+  theme: "github-light"
+  follow_site_theme: true
 
 # Build settings
 # highlighter: none
