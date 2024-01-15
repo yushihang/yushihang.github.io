@@ -702,4 +702,8 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
   ![编译 solidity 代码](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/compile.png?raw=true)
 
+  看到出现如下 UI 元素，即可确认编译成功
+
+  ![编译成功](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/compiled.png?raw=true)
+
 -
