@@ -53,65 +53,70 @@ a === b
     lt.in[1] <== age;
     out <== lt.out;
 
-    out <== lt.ageLimit; //this will cause error
+    out <== ageLimit; //this will cause error
   }
   ```
 
   ```bash
   ❯ circom AgeProof.circom --r1cs --wasm --sym --c
-  error[T2046]: Typing error found
-    ┌─ "AgeProof.circom":141:13
+  error[T3001]: Exception caused by invalid assignment: signal already assigned
+    ┌─ "AgeProof.circom":141:5
     │
-  141 │     out <== lt.ageLimit;
-    │             ^^^^^^^^^^^ Signal not found in component: only accesses to input/output signals are allowed
+  141 │     out <== ageLimit;
+    │     ^^^^^^^^^^^^^^^^ found here
+    │
+    = call trace:
+      ->AgeProof
 
   previous errors were found
   ```
 
+  报错具体信息为`signal already assigned`
+
 - Circom 的赋值运算和约束检查是两个不同的阶段
   赋值运算的逻辑是由 prover 在生成 witness 的过程中确定的，而约束检查是由 verifier 在验证 proof 的过程中进行的。
 
-  所以如果遇到恶意的 prover, 他是可以修改代码再进行赋值的。
+所以如果遇到恶意的 prover, 他是可以修改代码再进行赋值的。
 
-  如果约束的内容足够多，verifier 会在验证 proof 的时候发现这个 proof 是错误的。
+如果约束的内容足够多，verifier 会在验证 proof 的时候发现这个 proof 是错误的。
 
-  但是如果 verifier 处运行的 circom 代码(不会被 proof 修改), 没有足够的约束， 例如都是 `<--` 而不是 `<==`, 就不一定能发现恶意修改代码后生成的 witness.
+但是如果 verifier 处运行的 circom 代码(不会被 proof 修改), 没有足够的约束， 例如都是 `<--` 而不是 `<==`, 就不一定能发现恶意修改代码后生成的 witness.
 
 ### 一些有用的文档
 
 - [Assigned but not Constrained](https://github.com/0xPARC/zk-bug-tracker#8-assigned-but-not-constrained)
 
-  这个文档中用了一个很好的例子来说明 `<==` 和 `<--` 的区别。
+这个文档中用了一个很好的例子来说明 `<==` 和 `<--` 的区别。
 
-  也就是如果应该用 `<==` 的地方用了 `<--`，会导致的问题。
+也就是如果应该用 `<==` 的地方用了 `<--`，会导致的问题。
 
 - [Execution vs constraints](https://dev.to/spalladino/a-beginners-intro-to-coding-zero-knowledge-proofs-c56#:%7E:text=For%20instance%2C%20Circom%20only%20allows,be%20the%20set%20of%20constraints)
 
-  为防止原文链接失效，我把对应的 Section 摘录在这里
+为防止原文链接失效，我把对应的 Section 摘录在这里
 
-  #### Execution vs constraints
+#### Execution vs constraints
 
-  In the workflow above, you may have noted that the circuit is used twice by the prover: first to generate the witness, and then to derive the constraints that are covered by the proof. These two runs are completely different beasts, and understanding their difference is one of the keys to understanding how ZKPs work.
+In the workflow above, you may have noted that the circuit is used twice by the prover: first to generate the witness, and then to derive the constraints that are covered by the proof. These two runs are completely different beasts, and understanding their difference is one of the keys to understanding how ZKPs work.
 
-  Let's go back to our Circom example from before, where we had two instructions:
+Let's go back to our Circom example from before, where we had two instructions:
 
-  ```circom
-  ab <== a _ b;
-  c <== ab _ ab;
-  ```
+```circom
+ab <== a _ b;
+c <== ab _ ab;
+```
 
-  In Circom, a fat arrow is just syntax sugar for two different instructions, assignment and constrain, so the above can be expanded to:
+In Circom, a fat arrow is just syntax sugar for two different instructions, assignment and constrain, so the above can be expanded to:
 
-  ```circom
-  ab <-- a*b
-  ab === a*b
-  c <-- ab _ ab
-  c === ab _ ab
-  ```
+```circom
+ab <-- a*b
+ab === a*b
+c <-- ab _ ab
+c === ab _ ab
+```
 
-  The a <-- a*b instructions means during the execution phase, assign a*b to ab, and gets ignored when compiling the constraints. On the other hand, ab === a*b means add a constraint that forces ab to be equal to a*b, which gets ignored during execution. In other words, when writing a circuit you're writing two different programs, that belong to two different programming paradigms, in a single one.
+The a <-- a*b instructions means during the execution phase, assign a*b to ab, and gets ignored when compiling the constraints. On the other hand, ab === a*b means add a constraint that forces ab to be equal to a*b, which gets ignored during execution. In other words, when writing a circuit you're writing two different programs, that belong to two different programming paradigms, in a single one.
 
-  While you will usually write assignments and constraints that are equivalent, sometimes you need to split them up. A good example of this is the IsZero circuit.
+While you will usually write assignments and constraints that are equivalent, sometimes you need to split them up. A good example of this is the IsZero circuit.
 
 - [Constraint Generation](https://docs.circom.io/circom-language/constraint-generation/)
 
