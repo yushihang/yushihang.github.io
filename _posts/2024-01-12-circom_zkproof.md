@@ -1,4 +1,4 @@
-## Circom 电路描述语言 和 零知识证明(ZKProof) 学习记录
+## (Circom & ZKProof) Circom 电路描述语言 和 零知识证明(ZKProof) 学习记录
 
 ## Circom and Zero-Knowledge Proof Learning Records
 
