@@ -12,13 +12,13 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
 ### 搭建 Circom 开发环境
 
-- #### 安装 rustup
+- #### 安装 `rustup`
 
   ```bash
   curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
   ```
 
-- #### 安装 node.js 和 npm, yarn 等包管理工具
+- #### 安装 `node.js` 和 `npm`, `yarn` 等包管理工具
 
 - #### clone circom git
 
@@ -26,20 +26,20 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
   git clone https://github.com/iden3/circom.git
   ```
 
-- #### 用 rust 的编译工具 cargo 编译 circom
+- #### 用 `rust` 的编译工具 `cargo` 编译 `circom`
 
   ```bash
   cd circom
   cargo build --release
   ```
 
-- #### 安装 circom
+- #### 安装编译后的 `circom`
 
   ```bash
   cargo install --path circom
   ```
 
-- #### 运行 circom -h 看看是否安装成功
+- #### 运行 `circom -h` 看看是否安装成功
 
   ```bash
   circom -h
@@ -81,21 +81,21 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
   <input> Path to a circuit with a main component   [default: ./circuit.circom]
   ```
 
-- #### 安装 snarkjs
+- #### 安装 `snarkjs`
 
   ```bash
   npm install -g snarkjs
   ```
 
-  snarkjs 可以从 circom 产出的文件中生成和验证 ZKProof(零知识证明)。也可以输出对应的 solidity 代码，用于部署到以太坊上完成验证 ZKProof 的工作。
+  `snarkjs` 可以从 `circom` 产出的文件中生成和验证 ZKProof(零知识证明)。也可以输出对应的 solidity 代码，用于部署到以太坊上完成验证 ZKProof 的工作。
 
 - #### 关于开发环境
 
   VSCode 里有一些 extension, 从下载数看用的人不多。
 
-  如果有适合 Circom 的 extension, 请告诉我
+  如果有适合 Circom 的 extension, 请[告诉我](https://github.com/yushihang/yushihang.github.io/issues)
 
-### 编写 Circom 代码
+### 编写 `Circom` 代码
 
 新建一个名为 `AgeProof.circom` 的文件, 内容如下:
 
@@ -378,7 +378,7 @@ Everything went okay
                 632faaf9 7b9070fe e93d3705 f9315bd5
   ```
 
-- #### 步骤 2: 生成 [Powers of Tau](https://github.com/ebfull/powersoftau)
+- #### 步骤 2: 生成 Keys
 
   使用步骤 1 的输出和前面生成的电路相关文件，生成用于证明和验证 ZKProof 的密钥文件。
 
