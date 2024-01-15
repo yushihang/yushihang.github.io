@@ -699,4 +699,4 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
   - 点击最左边 Tab 栏的 `Solidity compiler`，然后点击`Compile verifier.sol`
 
-  ![新建 verifier.sol 文件](./images/2014-01-12/compile.png)
+  ![编译 solidity 代码](./images/2014-01-12/compile.png)
