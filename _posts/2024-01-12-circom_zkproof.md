@@ -291,19 +291,19 @@ Everything went okay
 
   The set of inputs, intermediate signals and output is called witness.
 
-  #### 在 AgeProof_js 目录下创建一个 `input.json`, 内容如下
+  ##### 在 AgeProof_js 目录下创建一个 `input.json`, 内容如下
 
   ```json
   { "age": 21, "ageLimit": 18 }
   ```
 
-  #### 然后运行如下命令
+  ##### 然后运行如下命令
 
   ```shell
   node generate_witness.js AgeProof.wasm input.json witness.wtns
   ```
 
-  #### 确认目录下生成了 `witness.wtns` 文件
+  ##### 确认目录下生成了 `witness.wtns` 文件
 
 ---
 
@@ -313,7 +313,7 @@ Everything went okay
 
   此步骤与我们刚才生成的电路无关。
 
-  #### 在 `AgeProof_js` 目录下运行命令
+  ##### 在 `AgeProof_js` 目录下运行命令
 
   ```shell
   snarkjs powersoftau new bn128 12 pot12_0000.ptau -v
@@ -339,13 +339,13 @@ Everything went okay
                   ad75abd2 c8340b40 0e3b18e9 68b4ffef
   ```
 
-  #### 接下来运行
+  ##### 接下来运行
 
   ```shell
   snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v
   ```
 
-  #### 此时会提示输入一个 random text, 随便输入即可(无需记住)
+  ##### 此时会提示输入一个 random text, 随便输入即可(无需记住)
 
   ```shell
   snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v
@@ -381,7 +381,7 @@ Everything went okay
 
   使用步骤 1 的输出和前面生成的电路相关文件，生成用于证明和验证 ZKProof 的密钥文件。
 
-  #### 在 `AgeProof_js` 目录下运行命令
+  ##### 在 `AgeProof_js` 目录下运行命令
 
   ```shell
   snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v
@@ -410,7 +410,7 @@ Everything went okay
 
   ```
 
-  #### 执行如下命令, 生成 AgeProof_0000.zkey (用于 proving 和 verification 的 keys 之一)
+  ##### 执行如下命令, 生成 AgeProof_0000.zkey (用于 proving 和 verification 的 keys 之一)
 
   ```shell
   snarkjs groth16 setup ../AgeProof.r1cs pot12_final.ptau AgeProof_0000.zkey
@@ -431,7 +431,7 @@ Everything went okay
                 c83a6553 3268c7ba c6a361a0 04c96a0b
   ```
 
-  #### 执行如下命令，生成 AgeProof_0001.zkey
+  ##### 执行如下命令，生成 AgeProof_0001.zkey
 
   ```shell
   snarkjs zkey contribute AgeProof_0000.zkey AgeProof_0001.zkey --name="1st Contributor Name" -v
@@ -461,7 +461,7 @@ Everything went okay
                 0fcf16dd f99de3d1 9bcb45f2 9cc8b744
   ```
 
-  #### 执行如下命令, 导出用于验证的 key 文件 (`verification_key.json`)
+  ##### 执行如下命令, 导出用于验证的 key 文件 (`verification_key.json`)
 
   ```shell
   snarkjs zkey export verificationkey AgeProof_0001.zkey verification_key.json
@@ -475,7 +475,7 @@ Everything went okay
   [INFO]  snarkJS: EXPORT VERIFICATION KEY FINISHED
   ```
 
-  #### `verifcation_key.json` 的内容如下
+  ##### `verifcation_key.json` 的内容如下
 
   ```json
   {
