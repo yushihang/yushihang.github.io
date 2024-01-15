@@ -2,7 +2,7 @@
 layout: post
 title: Circom 中赋值(<--)和约束(<==)的关系和区别
 subtitle: 如果把<==都换成<--, 会发生什么?
-categories: Web3
+categories: Web3 DID
 tags: [Circom, zkproof]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Circom 电路描述语言 和 零知识证明(ZKProof) 学习记录
 subtitle: 如何从头搭建 circom 开发环境, 编写 circom 代码, 生成 ZKProof, 并用snarkjs和智能合约验证 ZKProof
-categories: Web3
+categories: Web3 DID
 tags: [DID, circom, zkproof, snark]
 ---
 
