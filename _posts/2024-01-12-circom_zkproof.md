@@ -12,34 +12,34 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
 ### 搭建 Circom 开发环境
 
-- 安装 rustup
+- #### 安装 rustup
 
   ```bash
   curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
   ```
 
-- 安装 node.js 和 npm, yarn 等包管理工具
+- #### 安装 node.js 和 npm, yarn 等包管理工具
 
-- clone circom git
+- #### clone circom git
 
   ```bash
   git clone https://github.com/iden3/circom.git
   ```
 
-- 用 rust 的编译工具 cargo 编译 circom
+- #### 用 rust 的编译工具 cargo 编译 circom
 
   ```bash
   cd circom
   cargo build --release
   ```
 
-- 安装 circom
+- #### 安装 circom
 
   ```bash
   cargo install --path circom
   ```
 
-- 运行 circom -h 看看是否安装成功
+- #### 运行 circom -h 看看是否安装成功
 
   ```bash
   circom -h
@@ -81,7 +81,7 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
   <input> Path to a circuit with a main component   [default: ./circuit.circom]
   ```
 
-- 安装 snarkjs
+- #### 安装 snarkjs
 
   ```bash
   npm install -g snarkjs
@@ -89,7 +89,8 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
   snarkjs 可以从 circom 产出的文件中生成和验证 ZKProof(零知识证明)。也可以输出对应的 solidity 代码，用于部署到以太坊上完成验证 ZKProof 的工作。
 
-- 关于开发环境
+- #### 关于开发环境
+
   VSCode 里有一些 extension, 从下载数看用的人不多。
 
   如果有适合 Circom 的 extension, 请告诉我
@@ -136,10 +137,10 @@ template BinSum(n, ops) {
 
     e2 = 1;
     for (k=0; k<nout; k++) {
-        out[k] <-- (lin >> k) & 1;
+        out[k] <-- #### (lin >> k) & 1;
 
         // Ensure out is binary
-        out[k] * (out[k] - 1) === 0;
+        out[k] * (out[k] - #### 1) === 0;
 
         lout += out[k] * e2;
 
@@ -157,7 +158,7 @@ template IsZero() {
 
     signal inv;
 
-    inv <-- in!=0 ? 1/in : 0;
+    inv <-- #### in!=0 ? 1/in : 0;
 
     out <== -in*inv +1;
     in*out === 0;
@@ -172,10 +173,10 @@ template Num2BitsNeg(n) {
 
     isZero = IsZero();
 
-    var neg = n == 0 ? 0 : 2**n - in;
+    var neg = n == 0 ? 0 : 2**n - #### in;
 
     for (var i = 0; i<n; i++) {
-        out[i] <-- (neg >> i) & 1;
+        out[i] <-- #### (neg >> i) & 1;
         out[i] * (out[i] -1 ) === 0;
         lc1 += out[i] * 2**i;
     }
@@ -184,7 +185,7 @@ template Num2BitsNeg(n) {
 
 
 
-    lc1 + isZero.out * 2**n === 2**n - in;
+    lc1 + isZero.out * 2**n === 2**n - #### in;
 }
 
 template Num2Bits(n) {
@@ -194,7 +195,7 @@ template Num2Bits(n) {
 
     var e2=1;
     for (var i = 0; i<n; i++) {
-        out[i] <-- (in >> i) & 1;
+        out[i] <-- #### (in >> i) & 1;
         out[i] * (out[i] -1 ) === 0;
         lc1 += out[i] * e2;
         e2 = e2+e2;
@@ -282,7 +283,7 @@ Everything went okay
 
 运行完成后会生成 AgeProof_js 和 AgeProof_cpp 两个目录
 
-- 编译 witness
+- #### 编译 witness
 
   ZKProof 的验证方只会对 circom 的约束进行验证，不会进行赋值操作。
 
@@ -309,7 +310,7 @@ Everything went okay
 
 ### 使用 `snarkjs` 生成 ZKProof 的密钥文件
 
-- 步骤 1: 生成 [Powers of Tau](https://github.com/ebfull/powersoftau)
+- #### 步骤 1: 生成 [Powers of Tau](https://github.com/ebfull/powersoftau)
 
   此步骤与我们刚才生成的电路无关。
 
@@ -377,7 +378,7 @@ Everything went okay
                 632faaf9 7b9070fe e93d3705 f9315bd5
   ```
 
-- 步骤 2: 生成 [Powers of Tau](https://github.com/ebfull/powersoftau)
+- #### 步骤 2: 生成 [Powers of Tau](https://github.com/ebfull/powersoftau)
 
   使用步骤 1 的输出和前面生成的电路相关文件，生成用于证明和验证 ZKProof 的密钥文件。
 
@@ -582,7 +583,7 @@ snarkjs groth16 prove AgeProof_0001.zkey witness.wtns proof.json public.json
 
 此命令会生成 groth16 proof, 一共有两个输出文件
 
-- `proof.json`
+- #### `proof.json`
 
   此文件包含了 proof 的内容
 
@@ -614,7 +615,7 @@ snarkjs groth16 prove AgeProof_0001.zkey witness.wtns proof.json public.json
   }
   ```
 
-- `public.json`
+- #### `public.json`
 
   此文件包含了 电路的 output signal 的值，以及 public input singal 的值
 
@@ -669,7 +670,7 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
 ### 通过智能合约验证 ZKProof
 
-- 生成 verifier solidity 代码
+- #### 生成 verifier solidity 代码
 
   运行如下命令
 
@@ -687,16 +688,16 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
   同时会生成 `verifier.sol` 文件
 
-- 部署合约代码
+- #### 部署合约代码
 
-  - 浏览器访问 [https://remix.ethereum.org/](https://remix.ethereum.org/)
+  - #### 浏览器访问 [https://remix.ethereum.org/](https://remix.ethereum.org/)
 
-  - 点击最左边 Tab 栏的 `File explorer`, 然后在 contracts 目录上点击右键，选择新建文件，命名为`verifier.sol`
+  - #### 点击最左边 Tab 栏的 `File explorer`, 然后在 contracts 目录上点击右键，选择新建文件，命名为`verifier.sol`
 
     ![新建 verifier.sol 文件](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/newfile.png?raw=true)
 
-  - 选中刚创建的 `verifier.sol` 文件, 将本地的同名文件内容复制到浏览器页面右侧的编辑框中
+  - #### 选中刚创建的 `verifier.sol` 文件, 将本地的同名文件内容复制到浏览器页面右侧的编辑框中
 
-  - 点击最左边 Tab 栏的 `Solidity compiler`，然后点击`Compile verifier.sol`
+  - #### 点击最左边 Tab 栏的 `Solidity compiler`，然后点击`Compile verifier.sol`
 
   ![编译 solidity 代码](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/compile.png?raw=true)
