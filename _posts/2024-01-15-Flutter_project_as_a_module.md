@@ -2,8 +2,8 @@
 layout: post
 title: Flutter作为module集成到iOS/Android项目中的一些问题
 subtitle: 一些踩坑记录
-categories: Web3
-tags: [Circom, zkproof]
+categories: Mobile Development
+tags: [Flutter, iOS, Android]
 ---
 
 ## Flutter 作为 module 集成到 iOS/Android 项目中的一些问题
