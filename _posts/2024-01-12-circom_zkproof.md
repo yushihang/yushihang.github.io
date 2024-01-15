@@ -694,19 +694,19 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
 - #### 上传并部署智能合约
 
-  - ##### 浏览器访问 [https://remix.ethereum.org/](https://remix.ethereum.org/)
+  - #### 浏览器访问 [https://remix.ethereum.org/](https://remix.ethereum.org/)
 
-  - ##### 创建智能合约文件
+  - #### 创建智能合约文件
 
     点击最左边 Tab 栏的 `File explorer`, 然后在 contracts 目录上点击右键，选择新建文件，命名为`verifier.sol`
 
     ![新建 verifier.sol 文件](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/newfile.png?raw=true)
 
-  - ##### 复制智能合约代码到 Remix 中
+  - #### 复制智能合约代码到 Remix 中
 
     选中刚创建的 `verifier.sol` 文件, 将本地的同名文件内容复制到浏览器页面右侧的编辑框中
 
-  - ##### 编译智能合约代码
+  - #### 编译智能合约代码
 
     点击最左边 Tab 栏的 `Solidity compiler`
 
@@ -718,7 +718,7 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
     ![编译成功](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/compiled.png?raw=true)
 
-  - ##### 部署智能合约
+  - #### 部署智能合约
 
     点击最左边 Tab 栏的 `Deploy & run transacations`
 
@@ -728,7 +728,7 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
     确认 `CONTRACT` 下拉框中显示的内容为 `Groth16Verifier - contracts/verifier.sol`
 
-    点击`Deploy`
+    点击 `Deploy` 按钮
 
     看到如下的内容出现，即可确认部署成功
 
@@ -736,7 +736,7 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
 - #### 通过智能合约验证 ZKProof
 
-  - ##### 生成验证参数
+  - #### 生成验证参数
 
     在本地的 `AgeProof_js` 目录下运行命令
 
@@ -750,7 +750,7 @@ snarkjs groth16 verify verification_key.json public.json proof.json
     ["0x11ea5b1ac24fb7ec286bb66d469a31fc8d95615ab2e8ee6741cee675eb13a0c4", "0x185c553eae04444fcaec85871fc6cc74700fe517a9207638451bd616f8380544"],[["0x152a6f9645d5b56cfe31d6ae73cc1c134bbc0665a30f97cde46e89557eeebeed", "0x274304452646a585a21c9d20fc6a528bd56c53ad691f8d65c53799e0052b5e14"],["0x1b66891002c0bba53fcba7fb769d3dd5240d13db69e5e25c3c3c481afab28872", "0x2e9dca1d28b670230eefde20396cbe8a35e3a469144d6e5329dec9d78e9c1c3f"]],["0x1901789e0a7439d510f1bff8a313f0fbb8627a176b6777f4f4dd99e9a9f3377d", "0x0c15366800a012a9bd94b991b16b0fd3bc869279b27f8b0d9a8fac422afb0ac9"],["0x0000000000000000000000000000000000000000000000000000000000000001","0x0000000000000000000000000000000000000000000000000000000000000012"]
     ```
 
-  - ##### 运行合约的 verifyProof 函数完成验证
+  - #### 运行合约的 verifyProof 函数完成验证
 
     ![部署合约](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/verified.png?raw=true)
 
