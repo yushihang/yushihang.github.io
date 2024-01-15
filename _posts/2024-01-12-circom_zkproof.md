@@ -4,7 +4,7 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
 其他文章:
 
-[<==和<--的区别(赋值了为什么还需要约束)](https://github.com/0xPARC/zk-bug-tracker#8-assigned-but-not-constrained)
+[<==和<----的区别(赋值了为什么还需要约束)](https://github.com/0xPARC/zk-bug-tracker#8-assigned-but-not-constrained)
 
 [一篇很不错的科普](https://medium.com/@VitalikButerin/quadratic-arithmetic-programs-from-zero-to-hero-f6d558cea649#5539)
 
@@ -745,3 +745,11 @@ snarkjs groth16 verify verification_key.json public.json proof.json
     ```json
     ["0x11ea5b1ac24fb7ec286bb66d469a31fc8d95615ab2e8ee6741cee675eb13a0c4", "0x185c553eae04444fcaec85871fc6cc74700fe517a9207638451bd616f8380544"],[["0x152a6f9645d5b56cfe31d6ae73cc1c134bbc0665a30f97cde46e89557eeebeed", "0x274304452646a585a21c9d20fc6a528bd56c53ad691f8d65c53799e0052b5e14"],["0x1b66891002c0bba53fcba7fb769d3dd5240d13db69e5e25c3c3c481afab28872", "0x2e9dca1d28b670230eefde20396cbe8a35e3a469144d6e5329dec9d78e9c1c3f"]],["0x1901789e0a7439d510f1bff8a313f0fbb8627a176b6777f4f4dd99e9a9f3377d", "0x0c15366800a012a9bd94b991b16b0fd3bc869279b27f8b0d9a8fac422afb0ac9"],["0x0000000000000000000000000000000000000000000000000000000000000001","0x0000000000000000000000000000000000000000000000000000000000000012"]
     ```
+
+  - ##### 运行合约的 verifyProof 函数完成验证
+
+    ![部署合约](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/verified.png?raw=true)
+
+    将刚才复制的内容填入到 `verifyProof` 按钮右边的文本框中，并点击 `verifyProof` 按钮
+
+    看到输出 `0: bool: true`, 即可确认 ZKProof 验证成功
