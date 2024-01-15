@@ -293,7 +293,7 @@ Everything went okay
 
   #### 在 AgeProof_js 目录下创建一个 `input.json`, 内容如下
 
-  ```shell
+  ```json
   { "age": 21, "ageLimit": 18 }
   ```
 
@@ -620,6 +620,45 @@ snarkjs groth16 prove AgeProof_0001.zkey witness.wtns proof.json public.json
 
   其中的"1"为电路中 LessThan 的结果， "18"为 ageLimit 的值，表示电路里输入的年龄比 18 要大。
 
-  如果将 input.json 的内容
+  如果将前面 `input.json` 改动为如下内容，并重新执行以上各步骤。
 
-在实际使用时 private input age 会和其他数据一起在 zkproof 中被其他公私钥对签名, 以确保不会被篡改。不会出现说 prover 随意输入自己的 age 的情况。详见后续的 DID 相关学习记录。
+  ```json
+  { "age": 16, "ageLimit": 18 }
+  ```
+
+  `public.json`的内容将会是
+
+  ```json
+  ["0", "18"]
+  ```
+
+  <span style="color: #00AAAA;">
+  在实际使用时 private input age 会和其他数据一起在 zkproof 中被其他公私钥对签名, 以确保不会被篡改。
+
+  这样可以避免 prover 随意输入自己的 age 就能通过 verifier 验证的情况。
+
+  详见后续的 DID 相关学习记录。
+  </span>
+
+### 验证 ZKProof
+
+prover 可以将前面生成的 `verification_key.json` `public.json` `proof.json` 文件一并发送给 verifier。
+
+verifier 执行如下命令来验证
+
+```shell
+snarkjs groth16 verify verification_key.json public.json proof.json
+```
+
+```shell
+[INFO]  snarkJS: OK!
+```
+
+如果 prover 修改了几个 json 中的任意内容，验证将会失败。
+
+```shell
+snarkjs groth16 verify verification_key.json public.json proof.json
+[ERROR] snarkJS: Invalid proof
+```
+
+### 通过智能合约验证 ZKProof
