@@ -438,7 +438,7 @@ Everything went okay
   snarkjs zkey contribute AgeProof_0000.zkey AgeProof_0001.zkey --name="1st Contributor Name" -v
   ```
 
-  此时需要输入 random text, 随便输入即可, 不需要与前面步骤的随机文本相同。
+  此时需要输入 random text, 随便输入即可, 不需要与前面步骤的随机文本相同(当然相同也可以)。
 
   ```bash
   snarkjs zkey contribute AgeProof_0000.zkey AgeProof_0001.zkey --name="1st Contributor Name" -v
