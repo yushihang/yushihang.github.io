@@ -14,7 +14,7 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
 - 安装 rustup
 
-  ```shell
+  ```bash
   curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
   ```
 
@@ -22,26 +22,26 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
 - clone circom git
 
-  ```shell
+  ```bash
   git clone https://github.com/iden3/circom.git
   ```
 
 - 用 rust 的编译工具 cargo 编译 circom
 
-  ```shell
+  ```bash
   cd circom
   cargo build --release
   ```
 
 - 安装 circom
 
-  ```shell
+  ```bash
   cargo install --path circom
   ```
 
 - 运行 circom -h 看看是否安装成功
 
-  ```shell
+  ```bash
   circom -h
   circom compiler 2.1.7
   IDEN3
@@ -83,7 +83,7 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
 - 安装 snarkjs
 
-  ```shell
+  ```bash
   npm install -g snarkjs
   ```
 
@@ -254,7 +254,7 @@ LessThan 会把 in[0]和 in[1]的大小比较输出为 0 或者 1, 同时只有 
 
 ### 编译 AgeProof.circom
 
-```shell
+```bash
 circom AgeProof.circom --r1cs --wasm --sym --c
 ```
 
@@ -262,7 +262,7 @@ circom AgeProof.circom --r1cs --wasm --sym --c
 
 输出信息为
 
-```shell
+```bash
 
 template instances: 6
 non-linear constraints: 99
@@ -299,7 +299,7 @@ Everything went okay
 
   ##### 然后运行如下命令
 
-  ```shell
+  ```bash
   node generate_witness.js AgeProof.wasm input.json witness.wtns
   ```
 
@@ -315,13 +315,13 @@ Everything went okay
 
   ##### 在 `AgeProof_js` 目录下运行命令
 
-  ```shell
+  ```bash
   snarkjs powersoftau new bn128 12 pot12_0000.ptau -v
   ```
 
   输出为
 
-  ```shell
+  ```bash
   [DEBUG] snarkJS: Calculating First Challenge Hash
   [DEBUG] snarkJS: Calculate Initial Hash: tauG1
   [DEBUG] snarkJS: Calculate Initial Hash: tauG2
@@ -341,20 +341,20 @@ Everything went okay
 
   ##### 接下来运行
 
-  ```shell
+  ```bash
   snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v
   ```
 
   ##### 此时会提示输入一个 random text, 随便输入即可(无需记住)
 
-  ```shell
+  ```bash
   snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v
   Enter a random text. (Entropy):
   ```
 
   输出为
 
-  ```shell
+  ```bash
   [DEBUG] snarkJS: Calculating First Challenge Hash
   [DEBUG] snarkJS: Calculate Initial Hash: tauG1
   [DEBUG] snarkJS: Calculate Initial Hash: tauG2
@@ -383,13 +383,13 @@ Everything went okay
 
   ##### 在 `AgeProof_js` 目录下运行命令
 
-  ```shell
+  ```bash
   snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v
   ```
 
   此命令执行时间相对较长, 输出也较多, 仅截取最后几行
 
-  ```shell
+  ```bash
   ...
   ...
 
@@ -412,13 +412,13 @@ Everything went okay
 
   ##### 执行如下命令, 生成 AgeProof_0000.zkey (用于 proving 和 verification 的 keys 之一)
 
-  ```shell
+  ```bash
   snarkjs groth16 setup ../AgeProof.r1cs pot12_final.ptau AgeProof_0000.zkey
   ```
 
   输出为
 
-  ```shell
+  ```bash
   [INFO]  snarkJS: Reading r1cs
   [INFO]  snarkJS: Reading tauG1
   [INFO]  snarkJS: Reading tauG2
@@ -433,20 +433,20 @@ Everything went okay
 
   ##### 执行如下命令，生成 AgeProof_0001.zkey
 
-  ```shell
+  ```bash
   snarkjs zkey contribute AgeProof_0000.zkey AgeProof_0001.zkey --name="1st Contributor Name" -v
   ```
 
   此时需要输入 random text, 随便输入即可, 不需要与前面步骤的随机文本相同。
 
-  ```shell
+  ```bash
   snarkjs zkey contribute AgeProof_0000.zkey AgeProof_0001.zkey --name="1st Contributor Name" -v
   Enter a random text. (Entropy):
   ```
 
   输出为
 
-  ```shell
+  ```bash
   [DEBUG] snarkJS: Applying key: L Section: 0/96
   [DEBUG] snarkJS: Applying key: H Section: 0/128
   [INFO]  snarkJS: Circuit Hash:
@@ -463,13 +463,13 @@ Everything went okay
 
   ##### 执行如下命令, 导出用于验证的 key 文件 (`verification_key.json`)
 
-  ```shell
+  ```bash
   snarkjs zkey export verificationkey AgeProof_0001.zkey verification_key.json
   ```
 
   输出为
 
-  ```shell
+  ```bash
   [INFO]  snarkJS: EXPORT VERIFICATION KEY STARTED
   [INFO]  snarkJS: > Detected protocol: groth16
   [INFO]  snarkJS: EXPORT VERIFICATION KEY FINISHED
@@ -576,7 +576,7 @@ Everything went okay
 
 在 `AgeProof_js` 目录下运行命令
 
-```shell
+```bash
 snarkjs groth16 prove AgeProof_0001.zkey witness.wtns proof.json public.json
 ```
 
@@ -650,17 +650,17 @@ prover 可以将前面生成的 `verification_key.json` `public.json` `proof.jso
 
 verifier 执行如下命令来验证
 
-```shell
+```bash
 snarkjs groth16 verify verification_key.json public.json proof.json
 ```
 
-```shell
+```bash
 [INFO]  snarkJS: OK!
 ```
 
 如果 prover 修改了几个 json 中的任意内容，验证将会失败。
 
-```shell
+```bash
 snarkjs groth16 verify verification_key.json public.json proof.json
 [ERROR] snarkJS: Invalid proof
 ```
@@ -673,13 +673,13 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
   运行如下命令
 
-  ```shell
+  ```bash
   snarkjs zkey export solidityverifier AgeProof_0001.zkey verifier.sol
   ```
 
   输出为
 
-  ```shell
+  ```bash
   [INFO]  snarkJS: EXPORT VERIFICATION KEY STARTED
   [INFO]  snarkJS: > Detected protocol: groth16
   [INFO]  snarkJS: EXPORT VERIFICATION KEY FINISHED
