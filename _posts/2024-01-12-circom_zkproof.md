@@ -6,6 +6,8 @@ categories: Web3
 tags: [DID, circom, zkproof, snark]
 ---
 
+## Circom 电路描述语言 和 零知识证明(ZKProof) 学习记录
+
 Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
 其他文章:

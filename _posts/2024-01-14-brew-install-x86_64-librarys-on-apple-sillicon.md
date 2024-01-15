@@ -6,6 +6,8 @@ categories: Homebrew
 tags: [Homebrew, arm64, x86_64]
 ---
 
+## 如何在 Apple Silicon 上使用 Homebrew 安装 x86_64 的库
+
 ### Circom 生成的 C++代码
 
 在[上一篇文章]({{ site.baseurl }}{% link _posts/2024-01-12-circom_zkproof.md %})中，当执行完如下命令后

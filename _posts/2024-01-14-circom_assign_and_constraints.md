@@ -6,6 +6,8 @@ categories: Web3
 tags: [Circom, zkproof]
 ---
 
+## Circom 中赋值(<--)和约束(<==)的关系和区别
+
 ### 我的疑惑
 
 在学习 Circom 的时候，我发现 Circom 中有两种赋值的方式，一种是 `<--`，一种是 `<==`。
