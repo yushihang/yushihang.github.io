@@ -690,14 +690,16 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
 - #### 部署合约代码
 
-  - #### 浏览器访问 [https://remix.ethereum.org/](https://remix.ethereum.org/)
+  - ##### 浏览器访问 [https://remix.ethereum.org/](https://remix.ethereum.org/)
 
-  - #### 点击最左边 Tab 栏的 `File explorer`, 然后在 contracts 目录上点击右键，选择新建文件，命名为`verifier.sol`
+  - ##### 点击最左边 Tab 栏的 `File explorer`, 然后在 contracts 目录上点击右键，选择新建文件，命名为`verifier.sol`
 
     ![新建 verifier.sol 文件](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/newfile.png?raw=true)
 
-  - #### 选中刚创建的 `verifier.sol` 文件, 将本地的同名文件内容复制到浏览器页面右侧的编辑框中
+  - ##### 选中刚创建的 `verifier.sol` 文件, 将本地的同名文件内容复制到浏览器页面右侧的编辑框中
 
-  - #### 点击最左边 Tab 栏的 `Solidity compiler`，然后点击`Compile verifier.sol`
+  - ##### 点击最左边 Tab 栏的 `Solidity compiler`，然后点击`Compile verifier.sol`
 
   ![编译 solidity 代码](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/compile.png?raw=true)
+
+-
