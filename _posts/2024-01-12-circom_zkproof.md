@@ -698,12 +698,22 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
   - ##### 选中刚创建的 `verifier.sol` 文件, 将本地的同名文件内容复制到浏览器页面右侧的编辑框中
 
-  - ##### 点击最左边 Tab 栏的 `Solidity compiler`，然后点击`Compile verifier.sol`
+  - ##### 点击最左边 Tab 栏的 `Solidity compiler`
 
-  ![编译 solidity 代码](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/compile.png?raw=true)
+    ![编译 solidity 代码](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/compile.png?raw=true)
 
-  看到出现如下 UI 元素，即可确认编译成功
+    点击`Compile verifier.sol`
 
-  ![编译成功](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/compiled.png?raw=true)
+    看到出现如下 UI 元素，即可确认编译成功
 
--
+    ![编译成功](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/compiled.png?raw=true)
+
+  - ##### 点击最左边 Tab 栏的 `Deploy & run transacations`
+
+    ![部署合约](https://github.com/yushihang/yushihang.github.io/blob/main/images/2014-01-12/deploy.png?raw=true)
+
+    确认 `ENVIONMENT` 下拉框中显示的内容为 `Remix VM(xxxx)` 或者其他测试环境
+
+    确认 `CONTRACT` 下拉框中显示的内容为 `Groth16Verifier - contracts/verifier.sol`
+
+    点击`Deploy`
