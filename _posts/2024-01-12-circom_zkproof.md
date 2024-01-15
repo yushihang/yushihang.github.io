@@ -98,7 +98,7 @@ Circom 的文档链接: [官方文档](https://docs.circom.io/)
 
 新建一个名为 `AgeProof.circom` 的文件, 内容如下:
 
-```circom
+```java
 pragma circom 2.0.0;
 
 
