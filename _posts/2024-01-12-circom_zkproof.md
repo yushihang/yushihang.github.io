@@ -706,7 +706,7 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
     点击最左边 Tab 栏的 `File explorer`, 然后在 contracts 目录上点击右键，选择新建文件，命名为`verifier.sol`
 
-    ![新建 verifier.sol 文件]({{ "/assets/images/2014-01-12/newfile.png" | absolute url }})
+    ![新建 verifier.sol 文件]({{ "/assets/images/2024-01-12/newfile.png" | absolute url }})
 
   - #### 复制智能合约代码到 Remix 中
 
@@ -716,19 +716,19 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
     点击最左边 Tab 栏的 `Solidity compiler`
 
-    ![编译 solidity 代码]({{ "/assets/images/2014-01-12/compile.png" | absolute url }})
+    ![编译 solidity 代码]({{ "/assets/images/2024-01-12/compile.png" | absolute url }})
 
     点击`Compile verifier.sol`
 
     看到出现如下 UI 元素，即可确认编译成功
 
-    ![编译成功]({{ "/assets/images/2014-01-12/compiled.png" | absolute url }})
+    ![编译成功]({{ "/assets/images/2024-01-12/compiled.png" | absolute url }})
 
   - #### 部署智能合约
 
     点击最左边 Tab 栏的 `Deploy & run transacations`
 
-    ![部署合约]({{ "/assets/images/2014-01-12/deploy.png" | absolute url }})
+    ![部署合约]({{ "/assets/images/2024-01-12/deploy.png" | absolute url }})
 
     确认 `ENVIONMENT` 下拉框中显示的内容为 `Remix VM(xxxx)` 或者其他测试环境
 
@@ -738,7 +738,7 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
     看到如下的内容出现，即可确认部署成功
 
-    ![部署合约]({{ "/assets/images/2014-01-12/deployed.png" | absolute url }})
+    ![部署合约]({{ "/assets/images/2024-01-12/deployed.png" | absolute url }})
 
 - #### 通过智能合约验证 ZKProof
 
@@ -758,7 +758,7 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
   - #### 运行合约的 verifyProof 函数完成验证
 
-    ![部署合约]({{ "/assets/images/2014-01-12/verified.png" | absolute url }})
+    ![部署合约]({{ "/assets/images/2024-01-12/verified.png" | absolute url }})
 
     将刚才复制的内容填入到 `verifyProof` 按钮右边的文本框中，并点击 `verifyProof` 按钮
 
