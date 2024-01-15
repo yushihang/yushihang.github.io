@@ -40,7 +40,7 @@ author: yushihang@github
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "2023-{currentYear} {author}"
+copyright: "© 2023-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
   My study records.
@@ -64,7 +64,7 @@ yat:
 # content_width: "920px"
 
 # Google analytics - GA4
-# google_analytics: [Measurement ID]
+google_analytics: G-W6PE2KEQTV
 # enableDNT: "false"
 
 # If you want to generate website sitemap, you can set true
