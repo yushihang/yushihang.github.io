@@ -305,6 +305,8 @@ Everything went okay
 
   #### 确认目录下生成了 `witness.wtns` 文件
 
+---
+
 ### 使用 `snarkjs` 生成 ZKProof 的密钥文件
 
 - 步骤 1: 生成 [Powers of Tau](https://github.com/ebfull/powersoftau)
@@ -568,6 +570,8 @@ Everything went okay
   }
   ```
 
+---
+
 ### 生成 ZKProof
 
 在 `AgeProof_js` 目录下运行命令
@@ -661,4 +665,38 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 [ERROR] snarkJS: Invalid proof
 ```
 
+---
+
 ### 通过智能合约验证 ZKProof
+
+- 生成 verifier solidity 代码
+
+  运行如下命令
+
+  ```shell
+  snarkjs zkey export solidityverifier AgeProof_0001.zkey verifier.sol
+  ```
+
+  输出为
+
+  ```shell
+  [INFO]  snarkJS: EXPORT VERIFICATION KEY STARTED
+  [INFO]  snarkJS: > Detected protocol: groth16
+  [INFO]  snarkJS: EXPORT VERIFICATION KEY FINISHED
+  ```
+
+  同时会生成 `verifier.sol` 文件
+
+- 部署合约代码
+
+  - 浏览器访问 [https://remix.ethereum.org/](https://remix.ethereum.org/)
+
+  - 点击最左边 Tab 栏的 `File explorer`, 然后在 contracts 目录上点击右键，选择新建文件，命名为`verifier.sol`
+
+    ![新建 verifier.sol 文件](./images/2014-01-12/newfile.png)
+
+  - 选中刚创建的 `verifier.sol` 文件, 将本地的同名文件内容复制到浏览器页面右侧的编辑框中
+
+  - 点击最左边 Tab 栏的 `Solidity compiler`，然后点击`Compile verifier.sol`
+
+  ![新建 verifier.sol 文件](./images/2014-01-12/compile.png)
