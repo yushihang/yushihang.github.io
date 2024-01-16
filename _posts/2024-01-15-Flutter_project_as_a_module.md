@@ -2,7 +2,7 @@
 layout: post
 title: Flutter作为module集成到iOS/Android项目中的一些问题
 subtitle: 一些踩坑记录
-categories: Mobile
+categories: Mobile Flutter
 tags: [Flutter, iOS, Android]
 ---
 
