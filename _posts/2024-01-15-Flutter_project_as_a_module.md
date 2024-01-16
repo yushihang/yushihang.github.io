@@ -46,7 +46,9 @@ Flutter App 工程打包后，可以直接在 iOS/Android 上运行。
 
 (和其他语言的入口函数一样)
 
-#### 如果自定义了入口函数, 那么需要在函数前面加上 @pragma('vm:entry-point') 注解
+#### @pragma('vm:entry-point')
+
+如果自定义了入口函数, 那么需要在函数前面加上 @pragma('vm:entry-point') 注解
 
 否则在执行`flutter build ios-framework`后如果使用了 Release 目录下的 xcframeworks, init() 函数将被剔除掉，导致该 Flutter Module 无法成功运行。
 
