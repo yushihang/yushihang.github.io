@@ -35,7 +35,7 @@ git rebase -r <commit hash>  --exec 'git commit --amend --no-edit --reset-author
 git push -f
 ```
 
-还有一个未经过测试的脚本
+还有一个待测试的脚本
 
 ```bash
 #!/bin/sh
