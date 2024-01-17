@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-17T01:28:27.451Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15" etag="u5Jaky5Hod83WPCl9Rj9" version="22.1.20" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-17T01:30:57.143Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15" etag="78-vfhkY7tKHhQTeMalR" version="22.1.20" type="github">
   <diagram name="Page-1" id="aR2iungKzlA5unj-N9OP">
     <mxGraphModel dx="1305" dy="936" grid="0" gridSize="14" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -52,8 +52,8 @@
         <mxCell id="_1n4BincOxXQv3ALfyLK-27" value="&lt;font style=&quot;font-size: 14px;&quot; color=&quot;#ff8000&quot;&gt;⚠️风险如下：&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;此处的证明可能是伪造&lt;br&gt;或者恶意篡改后的&lt;/font&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontFamily=Architects Daughter;" vertex="1" parent="1">
           <mxGeometry x="764" y="126" width="158" height="84" as="geometry" />
         </mxCell>
-        <mxCell id="_1n4BincOxXQv3ALfyLK-28" value="&lt;font color=&quot;#ff8000&quot; style=&quot;font-size: 14px;&quot;&gt;⚠️风险如下：&lt;br&gt;需要发行方配合&lt;br&gt;恶意方伪装为发行方&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontFamily=Architects Daughter;" vertex="1" parent="1">
-          <mxGeometry x="438" y="331.34000000000003" width="144" height="84" as="geometry" />
+        <mxCell id="_1n4BincOxXQv3ALfyLK-28" value="&lt;font color=&quot;#ff8000&quot; style=&quot;font-size: 14px;&quot;&gt;⚠️风险如下：&lt;br&gt;需要发行方配合&lt;br&gt;恶意方伪装为发行方&lt;br&gt;发行方也无法确认证明真伪&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontFamily=Architects Daughter;" vertex="1" parent="1">
+          <mxGeometry x="420" y="316.00000000000006" width="186" height="108" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
