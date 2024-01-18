@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-18T11:56:16.784Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="myYuUqNUk9qfZyyr8XZm" version="22.1.21" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-18T11:56:30.992Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="_bW5L3vj53m5W9vv-OCd" version="22.1.21" type="github">
   <diagram name="第 1 页" id="C8El7X4R0MNUI12ComAL">
     <mxGraphModel dx="1526" dy="873" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -21,9 +21,6 @@
         </mxCell>
         <mxCell id="TxfDrytHoigwNO3QsFBK-13" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="TxfDrytHoigwNO3QsFBK-3" vertex="1">
           <mxGeometry x="45" y="120" width="10" height="170" as="geometry" />
-        </mxCell>
-        <mxCell id="TxfDrytHoigwNO3QsFBK-18" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="TxfDrytHoigwNO3QsFBK-3" vertex="1">
-          <mxGeometry x="45" y="360" width="10" height="946" as="geometry" />
         </mxCell>
         <mxCell id="TxfDrytHoigwNO3QsFBK-22" value="FetchAndSaveClaim&lt;br&gt;UseCase" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
           <mxGeometry x="832" y="120" width="120" height="1950" as="geometry" />
