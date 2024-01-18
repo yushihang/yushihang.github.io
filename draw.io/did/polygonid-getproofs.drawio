@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-18T12:43:00.703Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="9zi9BiCN3RKwvNe6IYjg" version="22.1.21" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-18T12:43:23.894Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="zJ7Mwu2WEWPzy9kHLYkL" version="22.1.21" type="github">
   <diagram name="第 1 页" id="C8El7X4R0MNUI12ComAL">
     <mxGraphModel dx="1526" dy="873" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -96,7 +96,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="BkAWaWP3HrZWic8StWcY-10" value="&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&lt;u&gt;&lt;i&gt;ClaimEntity array&lt;/i&gt;&lt;/u&gt;&lt;/b&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
+        <mxCell id="BkAWaWP3HrZWic8StWcY-10" value="&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&lt;i style=&quot;&quot;&gt;&lt;u&gt;ClaimEntity array(&lt;/u&gt;one for each request&lt;u&gt;)&lt;/u&gt;&lt;/i&gt;&lt;/b&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1128.5" y="950" as="sourcePoint" />
             <mxPoint x="898.5" y="950" as="targetPoint" />
