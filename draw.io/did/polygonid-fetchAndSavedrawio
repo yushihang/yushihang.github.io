@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2024-01-18T10:59:18.653Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="KEwxAIl8sHxDcrn4s3AW" version="22.1.21" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-18T11:03:05.576Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="-NpUAVURSYU2PqjF894N" version="22.1.21" type="github">
   <diagram name="第 1 页" id="C8El7X4R0MNUI12ComAL">
     <mxGraphModel dx="1526" dy="873" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="kKGWQNoMtcEd__acopYI-27" value="&lt;div style=&quot;line-height: 21px;&quot;&gt;&lt;font face=&quot;Helvetica&quot; style=&quot;font-size: 11px; background-color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;FetchIden3MessageEntity &lt;/b&gt;Array&lt;/font&gt;&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
+        <mxCell id="kKGWQNoMtcEd__acopYI-27" value="&lt;div style=&quot;line-height: 21px;&quot;&gt;&lt;font face=&quot;Helvetica&quot; style=&quot;font-size: 11px; background-color: rgb(255, 255, 255);&quot;&gt;&lt;b&gt;&lt;i&gt;FetchIden3MessageEntity&lt;/i&gt; &lt;/b&gt;Array&lt;/font&gt;&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1130" y="600" as="sourcePoint" />
             <mxPoint x="900" y="600" as="targetPoint" />
@@ -89,7 +89,16 @@
           <mxGeometry x="920" y="610" width="220" height="240" as="geometry" />
         </mxCell>
         <mxCell id="kKGWQNoMtcEd__acopYI-29" value="loop&amp;nbsp;" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;" vertex="1" parent="1">
-          <mxGeometry x="810" y="853" width="390" height="200" as="geometry" />
+          <mxGeometry x="810" y="853" width="390" height="367" as="geometry" />
+        </mxCell>
+        <mxCell id="kKGWQNoMtcEd__acopYI-31" value="&lt;div style=&quot;line-height: 120%;&quot;&gt;&lt;/div&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;1&quot; style=&quot;border-color: var(--border-color);&quot;&gt;&lt;div style=&quot;font-weight: normal; line-height: 130%; font-size: 11px; background-color: rgb(255, 255, 255);&quot;&gt;&lt;/div&gt;&lt;b style=&quot;border-color: var(--border-color); font-size: 11px;&quot;&gt;&lt;i style=&quot;border-color: var(--border-color);&quot;&gt;&lt;div style=&quot;border-color: var(--border-color); font-size: 12px; font-style: normal; font-weight: 400; line-height: 21px;&quot;&gt;getAuthToken(&lt;b style=&quot;border-color: var(--border-color); font-size: 11px;&quot;&gt;&lt;i style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#ff33ff&quot;&gt;genesisDID&lt;/font&gt;,&amp;nbsp;&lt;i style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#0000ff&quot;&gt;privateKey,&lt;/font&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#cc6600&quot;&gt;profileNonceForScenario1,&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;border-color: var(--border-color); background-color: rgb(204, 255, 153);&quot;&gt;message&lt;/font&gt;&lt;/i&gt;&lt;/i&gt;&lt;/b&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;&lt;div style=&quot;line-height: 21px;&quot;&gt;&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;sourcePerimeterSpacing=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="901" y="910" as="sourcePoint" />
+            <mxPoint x="1130" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kKGWQNoMtcEd__acopYI-32" value="&lt;span style=&quot;border-color: var(--border-color); text-align: center; font-size: 11px;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot;&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;background-color: rgb(255, 255, 255);&quot; color=&quot;#cccccc&quot;&gt;iterate&lt;/font&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;&lt;b&gt;FetchIden3MessageEntity&lt;/b&gt;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;font style=&quot;&quot; color=&quot;#999999&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Array&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;each entity as a&lt;/span&gt;&lt;/font&gt; &lt;/i&gt;&lt;b style=&quot;background-color: rgb(204, 255, 153); font-style: italic;&quot;&gt;message&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="910" y="915" width="220" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
