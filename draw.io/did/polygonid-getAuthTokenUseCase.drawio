@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-18T09:10:04.412Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="UrNpR9F6pHwIaBD5Rgt7" version="22.1.21" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-18T09:10:55.709Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="8MFtYnQPA4c04DO9BL_w" version="22.1.21" type="github">
   <diagram name="第 1 页" id="C8El7X4R0MNUI12ComAL">
     <mxGraphModel dx="1926" dy="873" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -109,17 +109,6 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="f_Ja7BS4CiRk9DhTNqwc-80" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="f_Ja7BS4CiRk9DhTNqwc-4">
-          <mxGeometry x="50" y="1350" width="10" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="f_Ja7BS4CiRk9DhTNqwc-81" value="calculate witness using native library witnesscalc" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="f_Ja7BS4CiRk9DhTNqwc-4" target="f_Ja7BS4CiRk9DhTNqwc-80">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="55" y="1330" as="sourcePoint" />
-            <Array as="points">
-              <mxPoint x="85" y="1360" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="f_Ja7BS4CiRk9DhTNqwc-8" value="&lt;div style=&quot;line-height: 120%;&quot;&gt;&lt;div style=&quot;line-height: 120%;&quot;&gt;&lt;font style=&quot;background-color: rgb(255, 255, 255);&quot; face=&quot;Helvetica&quot;&gt;GetJWZUseCase.execute(&lt;b&gt;&lt;i&gt;message,&amp;nbsp;&lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 120%;&quot;&gt;&lt;font style=&quot;background-color: rgb(255, 255, 255);&quot; face=&quot;Helvetica&quot;&gt;zkpoof = nil)&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;sourcePerimeterSpacing=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="660" y="304" as="sourcePoint" />
@@ -130,7 +119,7 @@
           <mxGeometry x="1080" y="120" width="100" height="1637" as="geometry" />
         </mxCell>
         <mxCell id="f_Ja7BS4CiRk9DhTNqwc-19" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="f_Ja7BS4CiRk9DhTNqwc-18">
-          <mxGeometry x="45" y="94" width="10" height="1212" as="geometry" />
+          <mxGeometry x="45" y="280" width="10" height="80" as="geometry" />
         </mxCell>
         <mxCell id="f_Ja7BS4CiRk9DhTNqwc-22" value="&lt;div style=&quot;line-height: 120%;&quot;&gt;&lt;div style=&quot;line-height: 120%;&quot;&gt;babyjubjub.hashPoseidon(&lt;b&gt;&lt;i&gt;message&lt;/i&gt;&lt;/b&gt;)&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;sourcePerimeterSpacing=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
@@ -247,7 +236,7 @@
             <mxPoint x="884" y="1421.6100000000001" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="f_Ja7BS4CiRk9DhTNqwc-82" value="&lt;div style=&quot;line-height: 120%;&quot;&gt;&lt;div style=&quot;line-height: 120%;&quot;&gt;PLGNAuthV2InputsMarshal&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;sourcePerimeterSpacing=0;" edge="1" parent="1">
+        <mxCell id="f_Ja7BS4CiRk9DhTNqwc-82" value="&lt;div style=&quot;line-height: 120%;&quot;&gt;&lt;div style=&quot;line-height: 120%;&quot;&gt;c-polygonid.PLGNAuthV2InputsMarshal&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;sourcePerimeterSpacing=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="900" y="1140" as="sourcePoint" />
             <mxPoint x="1120" y="1140" as="targetPoint" />
