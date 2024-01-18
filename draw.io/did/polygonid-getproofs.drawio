@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-18T12:51:04.756Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="jNOFXf7512jduj9RXxfN" version="22.1.21" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-18T12:51:59.387Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="oxp_r8rdF9OY8Qs-9y-U" version="22.1.21" type="github">
   <diagram name="第 1 页" id="C8El7X4R0MNUI12ComAL">
     <mxGraphModel dx="1526" dy="873" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -129,12 +129,18 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="BkAWaWP3HrZWic8StWcY-17" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="1129" y="1038" width="10" height="80" as="geometry" />
+          <mxGeometry x="1129" y="1038" width="10" height="112" as="geometry" />
         </mxCell>
         <mxCell id="BkAWaWP3HrZWic8StWcY-18" value="load circuit buffer (mtp / sig)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;sourcePerimeterSpacing=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="899.5" y="1090" as="sourcePoint" />
             <mxPoint x="1128.5" y="1090" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BkAWaWP3HrZWic8StWcY-19" value="GetIdentityUseCase.execute(&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;&lt;i style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#ff33ff&quot;&gt;genesisDID&lt;/font&gt;,&amp;nbsp;&lt;i style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#0000ff&quot;&gt;privateKey&lt;/font&gt;&lt;/i&gt;&lt;/i&gt;&lt;/b&gt;)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;sourcePerimeterSpacing=0;entryX=0;entryY=0;entryDx=0;entryDy=5;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="899.5" y="1140" as="sourcePoint" />
+            <mxPoint x="1128.5" y="1140" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
