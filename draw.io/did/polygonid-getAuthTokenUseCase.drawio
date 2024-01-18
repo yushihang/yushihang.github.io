@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-18T09:00:23.486Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="50NFloaoRaLNBS7oqBx_" version="22.1.21" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-18T09:04:34.919Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="NI8CdB7h9kBwtAjfmNVl" version="22.1.21" type="github">
   <diagram name="第 1 页" id="C8El7X4R0MNUI12ComAL">
     <mxGraphModel dx="1926" dy="873" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -20,12 +20,12 @@
           <mxGeometry x="600" y="120" width="100" height="1637" as="geometry" />
         </mxCell>
         <mxCell id="TxfDrytHoigwNO3QsFBK-18" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="TxfDrytHoigwNO3QsFBK-3" vertex="1">
-          <mxGeometry x="45" y="94" width="10" height="1212" as="geometry" />
+          <mxGeometry x="45" y="94" width="10" height="1476" as="geometry" />
         </mxCell>
         <mxCell id="f_Ja7BS4CiRk9DhTNqwc-77" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="TxfDrytHoigwNO3QsFBK-3">
           <mxGeometry x="50" y="1210" width="10" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="f_Ja7BS4CiRk9DhTNqwc-78" value="load circuit &quot;authV2&quot;&lt;br&gt;&lt;br&gt;(authV2.dat &amp;amp; authV2.zkey)" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="f_Ja7BS4CiRk9DhTNqwc-77" parent="TxfDrytHoigwNO3QsFBK-3">
+        <mxCell id="f_Ja7BS4CiRk9DhTNqwc-78" value="load &lt;b&gt;&lt;i&gt;&lt;font color=&quot;#ff3333&quot;&gt;circuit&lt;/font&gt;&lt;/i&gt;&lt;/b&gt; &quot;authV2&quot;&lt;br&gt;&lt;br&gt;(authV2.dat &amp;amp; authV2.zkey)" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="f_Ja7BS4CiRk9DhTNqwc-77" parent="TxfDrytHoigwNO3QsFBK-3">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="55" y="1190" as="sourcePoint" />
             <Array as="points">
@@ -40,7 +40,7 @@
           <mxGeometry x="841" y="120" width="100" height="1637" as="geometry" />
         </mxCell>
         <mxCell id="f_Ja7BS4CiRk9DhTNqwc-5" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="f_Ja7BS4CiRk9DhTNqwc-4">
-          <mxGeometry x="45" y="94" width="10" height="1212" as="geometry" />
+          <mxGeometry x="45" y="94" width="10" height="1486" as="geometry" />
         </mxCell>
         <mxCell id="f_Ja7BS4CiRk9DhTNqwc-30" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="f_Ja7BS4CiRk9DhTNqwc-4">
           <mxGeometry x="50" y="229" width="10" height="40" as="geometry" />
@@ -239,6 +239,12 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="883" y="1250" as="sourcePoint" />
             <mxPoint x="660" y="1250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_Ja7BS4CiRk9DhTNqwc-79" value="&lt;div style=&quot;line-height: 120%;&quot;&gt;&lt;div style=&quot;line-height: 120%;&quot;&gt;&lt;font style=&quot;background-color: rgb(255, 255, 255);&quot; face=&quot;Helvetica&quot;&gt;ProveUseCase.execute&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 120%;&quot;&gt;&lt;font style=&quot;background-color: rgb(255, 255, 255);&quot; face=&quot;Helvetica&quot;&gt;(&lt;/font&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;&lt;i style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#7f00ff&quot;&gt;authInputs&lt;/font&gt;&lt;/i&gt;&lt;/b&gt;&lt;font style=&quot;background-color: rgb(255, 255, 255);&quot; face=&quot;Helvetica&quot;&gt;&lt;b&gt;&lt;i&gt;,&amp;nbsp;&lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;b style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;&lt;i style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#ff3333&quot;&gt;circuit&lt;/font&gt;&lt;/i&gt;&lt;/b&gt;&lt;font face=&quot;Helvetica&quot;&gt;)&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;sourcePerimeterSpacing=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="1423.6100000000001" as="sourcePoint" />
+            <mxPoint x="884" y="1421.6100000000001" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
