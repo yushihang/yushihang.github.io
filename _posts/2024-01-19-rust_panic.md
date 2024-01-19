@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Rust编译为 C 接口 Native Library 时的panic处理
+title: Rust编译为 C 接口 Native Library 时的Panic处理
 subtitle: 谁的错谁自己兜着🤣
-categories: SwiftUI iOS
-tags: [Swift, iOS, SwiftUI]
+categories: Rust C
+tags: [Rust, C, Panic]
 ---
 
 ## Rust 编译为 C 接口 Native Library 时的 panic 处理
