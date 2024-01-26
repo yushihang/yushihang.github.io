@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iOS上的 OpenMP 支持
-subtitle: #pragma omp parallel
+subtitle: -#pragma omp parallel
 categories: OpenMP iOS 并行
 tags: [OpenMP, iOS, 并行]
 ---
