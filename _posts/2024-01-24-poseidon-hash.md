@@ -36,7 +36,7 @@ POSEIDON hash 与其他 hash 函数在几个方面有所不同：
 
 - 结构
 
-  POSEIDON hash 采用了一种新颖的结构，包括了 Sponge Construction 和 HADES Design Strategy，这使得它在处理零知识证明系统中的特定需求时表现出色。
+  POSEIDON hash 采用了一种新颖的结构，包括了 Sponge Construction 和 HADES Design Strategy，在设计中考虑了对 Merkle 树的应用，这使得它在处理零知识证明系统中的特定需求时表现出色。
 
 - 性能
 
