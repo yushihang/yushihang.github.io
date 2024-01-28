@@ -12,18 +12,18 @@ tags: [DID, merkle-tree]
 
 [wikipedia](https://en.wikipedia.org/wiki/Merkle_tree)
 
-[https://en.wikipedia.org/wiki/JSON-LD](https://en.wikipedia.org/wiki/JSON-LD)
+[Paper](https://people.eecs.berkeley.edu/~raluca/cs261-f15/readings/merkleodb.pdf)
 
-### ChatGPT 的解释
+### 我对默克尔树的一些粗浅理解
 
-Me:
+- 默克尔树是一种二叉树结构，每个节点都是其(两个)子节点的 hash 值，最终的根节点就是整个树的 hash 值。
 
-是不是可以理解为 jsonld 为 json 的每个字段提供了一种“注释”的方法
+- 默克尔树的数据信息是存储在叶节点上的，而非树的中间节点。
 
-ChatGPT:
+- 叶节点存放的也只是数据的 hash 值，而非数据本身。（不同类型的数据的 hash 方法需要使用该默克尔树的各方约定好）
 
-是的，你可以将 JSON-LD 看作是为 JSON 的每个字段提供了一种“注释”或元数据的方法。通过使用@context 中的信息，JSON-LD 能够为 JSON 数据中的每个属性指定语义上的含义。这种元数据可以帮助计算机系统更好地理解和处理数据，同时也提供了对人类阅读者的辅助。
+- 证明方需要校验自己对默克尔数的某个叶节点的数据的拥有权，只需要提供该叶节点的数据的 hash 值，以及该叶节点的路径上的所有中间节点的 hash 值即可。
 
-在 JSON-LD 中，这种注释的元数据包括了属性的名称、类型、以及可能的其他语义信息，如单位、范围等。这样的注释可以链接到特定的语义规范，使数据在不同的应用程序之间更具可互操作性。
+  ![merkle tree]({{ "/assets/images/2024-01-28/merkle-tree.jpg" | absolute url }})
 
-总体而言，JSON-LD 的设计目标之一就是提供一种机器可读的方式来注释和解释 JSON 数据，从而促进数据的语义互操作性。
+  例如上图,  证明方只需要提供黄色节点的源数据,以及所有红色的 H0 值, 校验方自己计算出所有绿色的 H0 值， 最后得到根 hash 值，与区块链上的根 hash 值进行比对即可。
