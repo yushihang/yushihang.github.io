@@ -1,18 +1,18 @@
 ---
 layout: post
-title: DID 学习日记 - 基础知识 - JSONLD
-subtitle: JSON for Linking Data
+title: DID 学习日记 - 基础知识 - 默克尔树(merkle tree)
+subtitle: 一种验证数据完整性的二叉树结构
 categories: DID
-tags: [DID, JSON, JSONLD]
+tags: [DID, merkle-tree]
 ---
 
-## DID 学习日记 - 基础知识 - JSONLD
+## DID 学习日记 - 基础知识 - 默克尔树(merkle tree)
 
 ### 资料
 
-[https://json-ld.org](https://json-ld.org)
+[wikipedia](https://en.wikipedia.org/wiki/Merkle_tree)
 
-[wikipedia](https://en.wikipedia.org/wiki/JSON-LD)
+[https://en.wikipedia.org/wiki/JSON-LD](https://en.wikipedia.org/wiki/JSON-LD)
 
 ### ChatGPT 的解释
 
