@@ -68,3 +68,25 @@ function calcBip32RootKeyFromSeed(phrase, passphrase) {
 HDNode.fromSeedHex 在最新的[bitcoinjs](http://https://github.com/yushihang/bitcoinjs-lib)
 
 里已经叫做 bip.fromSeed 了
+
+### PolygonID 和 Flutter 的问题
+
+其实 dart 的 bip32 的库是支持 128~512bit 的 seed 的
+只是 polygonid 限制了
+
+```dart
+
+  factory BIP32.fromSeed(Uint8List seed, [NetworkType? nw]) {
+    if (seed.length < 16) {
+      throw new ArgumentError("Seed should be at least 128 bits");
+    }
+    if (seed.length > 64) {
+      throw new ArgumentError("Seed should be at most 512 bits");
+    }
+    NetworkType network = nw ?? _BITCOIN;
+    final I = hmacSHA512(utf8.encode("Bitcoin seed") as Uint8List, seed);
+    final IL = I.sublist(0, 32);
+    final IR = I.sublist(32);
+    return BIP32.fromPrivateKey(IL, IR, network);
+  }
+```
