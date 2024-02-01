@@ -51,3 +51,20 @@ m/44'/60'/0'/0/{account_index}
   "version": 3
 }
 ```
+
+### 从 BIP39 Seed 生成 BIP32 root key 的逻辑
+
+代码见[这里](https://github.com/yushihang/bip39/blob/de71c22328b24e0848bbe1bd12ac8974ca83b5b8/src/js/index.js#L704C1-L710C6)
+
+```javascript
+function calcBip32RootKeyFromSeed(phrase, passphrase) {
+  seed = mnemonic.toSeed(phrase, passphrase);
+  bip32RootKey = libs.bitcoin.HDNode.fromSeedHex(seed, network);
+  if (isGRS())
+    bip32RootKey = libs.groestlcoinjs.HDNode.fromSeedHex(seed, network);
+}
+```
+
+HDNode.fromSeedHex 在最新的[bitcoinjs](http://https://github.com/yushihang/bitcoinjs-lib)
+
+里已经叫做 bip.fromSeed 了
