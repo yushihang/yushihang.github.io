@@ -2,8 +2,8 @@
 layout: post
 title: DID 学习日记 - PolygonID - CreateWallet
 subtitle:
-categories: iOS SwiftUI
-tags: [SwiftUI, iOS]
+categories: DID PolygonID Web3
+tags: [DID, PolygonID, Web3]
 ---
 
 ## DID 学习日记 - PolygonID - CreateWallet
