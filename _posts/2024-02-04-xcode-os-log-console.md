@@ -17,4 +17,4 @@ import os
 os_log("XXXX: \(message, .privacy: .public)")
 ```
 
-如果只写 os_log("XXXX: \(message)"), macOS Console app 上只能看到"XXXX: <privacy>"的打印。
+如果只写 os_log("XXXX: \(message)"), macOS Console app 上只能看到"XXXX: \<privacy\>"的打印。
