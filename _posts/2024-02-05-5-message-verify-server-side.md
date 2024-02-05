@@ -10,7 +10,7 @@ tags: [DID, PolygonID, Web3]
 
 [https://github.com/0xPolygonID/polygonid-flutter-sdk](https://github.com/0xPolygonID/polygonid-flutter-sdk])
 
-![data flow]({{ "/auth-challange-verification-at-iden3-verifier-side.jpg" | absolute url }})
+![data flow]({{ "/assets/images/2024-02-05/auth-challange-verification-at-iden3-verifier-side.jpg" | absolute url }})
 
 JWZ 中的 authToken 是通过让 bjjwallet 的 private key 对 message 的 jwz encode + poseidon hash 之后的 challenge 的签名，来完成的对私钥的验证。
 
