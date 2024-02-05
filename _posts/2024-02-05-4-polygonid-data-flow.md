@@ -6,7 +6,7 @@ categories: DID PolygonID Web3
 tags: [DID, PolygonID, Web3]
 ---
 
-## JWZ 格式
+## 从 Secret 到 ProfileDID
 
 [https://github.com/0xPolygonID/polygonid-flutter-sdk](https://github.com/0xPolygonID/polygonid-flutter-sdk])
 

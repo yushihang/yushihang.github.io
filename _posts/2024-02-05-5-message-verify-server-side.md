@@ -1,12 +1,12 @@
 ---
 layout: post
-title: DID 学习日记 - PolygonID - 从 Secret 到 ProfileDID
+title: DID 学习日记 - PolygonID - JWZ 中 Message 的校验
 subtitle:
 categories: DID PolygonID Web3
 tags: [DID, PolygonID, Web3]
 ---
 
-## JWZ 格式
+## JWZ 中 Message 的校验
 
 [https://github.com/0xPolygonID/polygonid-flutter-sdk](https://github.com/0xPolygonID/polygonid-flutter-sdk])
 
