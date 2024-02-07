@@ -80,6 +80,33 @@ if let returnValue{
 
 ```
 
+输出为
+
+```bash
+[0] Starting task
+[1] Starting task
+[0] sleep for 1824977088 ns
+[1] sleep for 1873617056 ns
+[0] Finished task 0
+[1] Finished task 1
+[2] Starting task
+[3] Starting task
+[3] sleep for 2433335872 ns
+[2] sleep for 1926212064 ns
+[2] Finished task 2
+[4] Starting task
+[4] sleep for 2300204992 ns
+[3] Finished task 3
+[4] Finished task 4
+
+All tasks finished with results:
+[0] 1824977088
+[1] 1873617056
+[2] 1926212064
+[3] 2433335872
+[4] 2300204992
+```
+
 这里如果用 DispatchSemaphore 会有如下报错 (GCD 和 Task Async-Await 不能混用)
 
 ```
