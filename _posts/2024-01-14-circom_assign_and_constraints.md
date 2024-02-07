@@ -103,20 +103,20 @@ In the workflow above, you may have noted that the circuit is used twice by the 
 Let's go back to our Circom example from before, where we had two instructions:
 
 ```circom
-ab <== a _ b;
-c <== ab _ ab;
+a <== a * b;
+c <== a + b;
 ```
 
 In Circom, a fat arrow is just syntax sugar for two different instructions, assignment and constrain, so the above can be expanded to:
 
 ```circom
-ab <-- a*b
-ab === a*b
-c <-- ab _ ab
-c === ab _ ab
+a <-- a * b
+a === a * b
+c <-- a + b
+c === a + b
 ```
 
-The a <-- a*b instructions means during the execution phase, assign a*b to ab, and gets ignored when compiling the constraints. On the other hand, ab === a*b means add a constraint that forces ab to be equal to a*b, which gets ignored during execution. In other words, when writing a circuit you're writing two different programs, that belong to two different programming paradigms, in a single one.
+The a <-- a*b instructions means during the execution phase, assign a*b to ab, and gets ignored when compiling the constraints. On the other hand, c === a*b means add a constraint that forces c to be equal to a*b, which gets ignored during execution. In other words, when writing a circuit you're writing two different programs, that belong to two different programming paradigms, in a single one.
 
 While you will usually write assignments and constraints that are equivalent, sometimes you need to split them up. A good example of this is the IsZero circuit.
 
