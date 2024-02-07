@@ -13,3 +13,5 @@ https://docs.iden3.io/getting-started/identity/identity-types/#limitations-of-et
 里面提到的 JWS with Ethereum Signature 可以参考
 
 https://learnblockchain.cn/article/5012
+
+ECDSA 只是签名算法。与 RSA 和 AES 不同，这种算法不能用于加密。以太坊采用的是 secp256k1 曲线。
