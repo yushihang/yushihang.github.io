@@ -10,7 +10,7 @@ tags: [DID, PolygonID, Web3]
 
 <https://docs.iden3.io/getting-started/identity/identity-types/#limitations-of-ethereum-controlled-identity>
 
-里面提到的 JWS with Ethereum Signature 可以参考
+里面提到的 JWS with Ethereum Signature 可以参考如下资料
 
 <https://learnblockchain.cn/article/5012>
 
