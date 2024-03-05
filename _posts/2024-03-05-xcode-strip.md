@@ -18,6 +18,10 @@ tags: [Xcode iOS]
 
 我们遇到的问题就是说这些函数找不到。
 
+```
+[ERROR:flutter/runtime/dart_vm_initializer.cc(41)] Unhandled Exception: Invalid argument(s): Failed to lookup symbol 'someFFIFunc': dlsym(RTLD_DEFAULT, someFFIFunc): symbol not found
+```
+
 ## 解决方案
 
 因为这些 c-interface 函数在我们 app 里实际没有被使用， clang 的链接器不可能知道 flutter 代码会用 ffi 方式访问他们，所以大概率是被 strip 了。
