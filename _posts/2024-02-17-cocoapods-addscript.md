@@ -29,3 +29,5 @@ end
 其中":always_out_of_data" 对应了 Xcode 中脚本的"Based on dependency analysis"选项
 
 :always_out_of_data => "1"代表不勾选此项
+
+这个选项需要 cocoapods 1.14.3 以上才支持
