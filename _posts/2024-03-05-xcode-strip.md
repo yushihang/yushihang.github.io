@@ -21,6 +21,7 @@ tags: [Xcode iOS]
 ## 解决方案
 
 因为这些 c-interface 函数在我们 app 里实际没有被使用， clang 的链接器不可能知道 flutter 代码会用 ffi 方式访问他们，所以大概率是被 strip 了。
+
 因此把 build settings 里的 strip style([STRIP_STYLE](https://developer.apple.com/documentation/xcode/build-settings-reference#Strip-Style))从 All Symbols 修改为 Non-Global Symbols 即可
 
 修改后重新 archive, 问题消失
@@ -28,6 +29,7 @@ tags: [Xcode iOS]
 ## 为什么只有 Archive 才有问题？
 
 另一个疑问是: 如果我把 Run 和 Archive 的配置都改为 Release, 那么 Run 没问题，Archive 有问题。
+
 这听起来就很不合理，为什么同样的配置，只有 Archive 有问题？
 
 查看文档后发现有以下关联：
