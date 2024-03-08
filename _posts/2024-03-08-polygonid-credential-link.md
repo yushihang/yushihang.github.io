@@ -62,3 +62,24 @@ tags: [DID, PolygonID, Web3]
       ![sig vc]({{ "/assets/images/2024-03-08/sigmtp.png" | absolute url }})
 
     - 这时无论 query qrcode 指定了 sig 或者 mtp，都能正确的生成 vp 并验证。
+
+### Credential Link
+
+- 这种情况下不需要事先指定 DID, 只需要限定能 issue vc 的个数
+- holder 扫码后才完成 issue
+- vc 生成完毕后，通过 apns 或者 FCM/GCM 将知 app 下载 vc
+- 如果用户错过了推送， issuer web 页面上可以再次展示 qrcode 供 app 扫描下载 vc
+
+#### 如果只选择 MTP 和 Sig
+
+- sig 方式会很快收到推送
+- mtp 方式需要等 publish 成功后才能收到推送
+
+#### 如果同时选择了选择 MTP 和 Sig
+
+- 用户会先收到 sig 的 vc 推送，下载后看到如下 vc
+  ![sig vc]({{ "/assets/images/2024-03-08/bjjonly.png" | absolute url }})
+
+- publish issuers state 后， 会收到另一条推送，revoke 掉之前的 sig vc
+
+- publish 成功后，会收到第三条推送，下载 sig+mtp vc
