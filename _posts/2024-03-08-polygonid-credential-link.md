@@ -1,0 +1,56 @@
+---
+layout: post
+title: DID 学习日记 - PolygonID DID Wallet (iOS AppStore版本的) 的操作流程体验
+subtitle:
+categories: DID PolygonID Web3
+tags: [DID, PolygonID, Web3]
+---
+
+## DID 学习日记 - PolygonID DID Wallet (iOS AppStore 版本的) 的操作流程体验
+
+### 相关网页/工具
+
+- issuer: <https://issuer-ui.polygonid.me/credentials/issued>
+- schema explorer: <https://schema-builder.polygonid.me/>
+- sdr/query builder
+- jwz validator: <https://jwz.polygonid.me/>
+
+### 操作方式
+
+两种操作方式
+
+- Direct issue credential
+- Credential Link
+
+### Direct issue credential
+
+指定 holder 的 DID 来 issue credential
+流程如下:
+
+- 客户端创建钱包
+- 获取客户端的 DID
+- issuer 侧 import schema
+- 选择 schema + holder DID
+- 填入 schema 对应的 claims 信息
+- 生成 credential qrcode
+- app 扫码, 下载并添加 credential
+- 在 query builder 上填入 schema 的 jsonld，并设置查询条件，生成 query qrcode
+- app 扫码，查询本地 vc， 生成本地 vp， 上传到 verifier, 完成 vp 验证
+- 网页端会有一个 jwz verifier
+
+  #### 如果只选择 MTP 和 Sig
+
+  那么只要 verifier/query builder 选择的验证方式和 VC 生成时一样即可
+
+  #### 如果同时选择了 MTP 和 Sig
+
+  - 在 state publish 之前， 扫描 vc qrcode 只能下载 sig 的签名，下载后在钱包里看到的内容如下
+
+    ![sig vc]({{ "/assets/images/2024-03-08/bjjonly.png" | absolute url }})
+
+    - 可以看到其中的`Proof types` 只有 `BJJSignature2021`
+
+    - 此时如果去验证一个指定了 Sig 模式的 verifier/sdr qrcode, 是可以成功的
+
+    - 但如果去试图验证一个指定了 mtp 模式的 verifier/sdr qrcode, 会遇到如下错误
+      ![sig vc]({{ "/assets/images/2024-03-08/mtpverifyerror.png" | absolute url }})
