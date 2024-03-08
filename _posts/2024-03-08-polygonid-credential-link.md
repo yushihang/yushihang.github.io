@@ -54,3 +54,11 @@ tags: [DID, PolygonID, Web3]
 
     - 但如果去试图验证一个指定了 mtp 模式的 verifier/sdr qrcode, 会遇到如下错误
       ![sig vc]({{ "/assets/images/2024-03-08/mtpverifyerror.png" | absolute url }})
+
+      原因是 polygonID 的 flutter sdk 会根据 schema(hash) 和 type (sig/mtp) 去寻找本地的 vc，此时本地没有 mtp 的 vc，所以报错。
+
+    - 此时去 publish issuer state，等待 20-30s 等 publish 到链上
+    - 再去打开 vc 的二维码扫描，并下载 vc，此时可以看到 vc 里已经同时有了 mtp 和 sig 两种
+      ![sig vc]({{ "/assets/images/2024-03-08/sigmtp.png" | absolute url }})
+
+    - 这时无论 query qrcode 指定了 sig 或者 mtp，都能正确的生成 vp 并验证。
