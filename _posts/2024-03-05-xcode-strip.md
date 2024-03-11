@@ -51,6 +51,11 @@ NO: Is the alternative.
 
 所以如果我们把 DEPLOYMENT_POSTPROCESSING 的值改为 YES, 那么在开发调试阶段也就能提前暴露这类问题， 不用等到 archive 了...
 
+## 补充
+
+<https://developer.apple.com/documentation/xcode/build-settings-reference#Enable-Testability>
+Enable Testability(ENABLE_TESTABILITY) 如果设置为 YES ， 也会导致 build 阶段的 strip 不执行, 这个在文档上并未列明。
+
 ## 思考
 
 对于 Xcode 默认设置里让开发阶段和 Archive 存在这么大的差异，是不是有点不厚道？
