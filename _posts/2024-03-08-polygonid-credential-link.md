@@ -82,4 +82,10 @@ tags: [DID, PolygonID, Web3]
 
 - publish issuers state 后， 会收到另一条推送，revoke 掉之前的 sig vc
 
+  ![sig vc]({{ "/assets/images/2024-03-08/revoke-notification.png" | absolute url }})
+
+  ![sig vc]({{ "/assets/images/2024-03-08/revoke-0.png" | absolute url }})
+
+  ![sig vc]({{ "/assets/images/2024-03-08/revoke-1.png" | absolute url }})
+
 - publish 成功后，会收到第三条推送，下载 sig+mtp vc
