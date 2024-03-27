@@ -651,6 +651,12 @@ usage() { echo "Usage: $0 {-d | --disableSimulator}" 1>&2; exit 1; }
 -Xpreprocessor -fopenmp
 ```
 
+具体操作时需要加入两行
+'-Xpreprocessor'
+'-fopenmp'
+
+而不是一行'-Xpreprocessor -fopenmp'
+
 可以用这个命令确认
 
 `clang  -Xpreprocessor -fopenmp  -E -dM - < /dev/null`
