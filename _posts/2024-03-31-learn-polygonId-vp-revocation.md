@@ -140,3 +140,6 @@ tags: [DID, PolygonID, Web3, Revocation]
   所以无论 issuer 采用 RHS 还是 Onchain 的做法<https://devs.polygonid.com/docs/issuer/features#revocation-status>
 
   似乎都无法规避恶意的 Holder？
+
+- #### 补充
+  RHS 的文档在这里 <https://docs.iden3.io/services/rhs/>
