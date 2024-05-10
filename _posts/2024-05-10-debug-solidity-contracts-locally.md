@@ -19,3 +19,8 @@ tags: [DID, Web3, SmartContracts, Ganache, hardhat, truffle]
 点击右上角齿轮图标
 
 ![修改配置]({{ "/assets/images/2024-05-10/ganache-1.jpg" | absolute url }})
+
+按需修改端口
+![修改端口]({{ "/assets/images/2024-05-10/ganache-2.jpg" | absolute url }})
+
+修改后点击右上角 Restart 按钮
