@@ -28,6 +28,7 @@ class Singleton {
 ![关闭 init] ({{ "/assets/images/2024-05-22/remove_init.jpg" | absolute url }})
 
 ```swift
+
 class MyClass {
     @available(*, unavailable, message: "do not call my init()")
     init() {
@@ -36,6 +37,6 @@ class MyClass {
 
 }
 
-MyClass()
+MyClass() //error: do not call my init()
 
 ```
