@@ -26,3 +26,16 @@ class Singleton {
 ### 关闭 init 函数的实现
 
 ![关闭 init] ({{ "assets/images/2024-05-22/remove_init.jpg" | absolute url }})
+
+```swift
+class MyClass {
+    @available(*, unavailable, message: "do not call my init()")
+    init() {
+        fatalError("This initializer is unavailable.")
+    }
+
+}
+
+MyClass()
+
+```
