@@ -71,6 +71,7 @@ Waku 是一个基于 libp2p 的通信协议，用于在去中心化应用之间�
   这里开始提到 WalletConnect v2.0 使用 Waku 2.0
 
 - 2022-06-30
+
   <https://arxiv.org/pdf/2207.00038>
 
   "At the time of this article, Waku is deployed by Status and WalletConnect v2."
@@ -78,6 +79,7 @@ Waku 是一个基于 libp2p 的通信协议，用于在去中心化应用之间�
   从这个描述看, WalletConnect 参与了 Waku 的部署落地。
 
 - 2023-11-01
+
   <https://x.com/Waku_org/status/1719709627535741106>
   "WalletConnect runs a network similar to Waku that enables data exchange between devices (for example, DApps requesting transaction signatures to a wallet)."
 
@@ -89,6 +91,7 @@ Waku 是一个基于 libp2p 的通信协议，用于在去中心化应用之间�
   这里已经跟 WalletConnect 的文档有矛盾了。
 
 - 2024-05-17
+
   <https://specs.walletconnect.com/2.0/glossary/relay>
   "By default, the clients will use a proxy server connected to the Waku network and it will connect to clients through a WebSocket using the reference Relay API."
 
@@ -96,6 +99,7 @@ Waku 是一个基于 libp2p 的通信协议，用于在去中心化应用之间�
   (当然这里也可以理解为是 WalletConnect 运营维护的 Waku 协议的网络， 而不是我们说的 Waku 社区运营的 relay 网络本身)
 
 - 2024-06-24
+
   在 Waku Discord 频道里的询问， Waku 方面工作人员提到
   "Yep, WC tested Waku at the time but they pulled back to build their own network afaik"
 
