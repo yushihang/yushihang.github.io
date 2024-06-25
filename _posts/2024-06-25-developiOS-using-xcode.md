@@ -79,18 +79,22 @@ tags: [iOS, Xcode, VSCode]
 
 #### 编译并安装插件
 
-https://github.com/nisargjhaveri/vscode-ios-debug
+<https://github.com/nisargjhaveri/vscode-ios-debug>
 
 这个插件推荐使用自己编译的版本，因为有个 PR 我提交给作者后，作者 merge 后，还没有发布到最新版本中。
 
-PR 地址为 https://github.com/nisargjhaveri/vscode-ios-debug/pull/22
+PR 地址为 <https://github.com/nisargjhaveri/vscode-ios-debug/pull/22>
 
 编译过程如下
 
 a. git clone https://github.com/nisargjhaveri/vscode-ios-debug
+
 b. cd vscode-ios-debug
+
 c. npm install -g vsce
+
 d. vsce package
+
 e. install generated ios-debug-0.4.0.vsix
 
 #### 编辑 launch.json
@@ -201,7 +205,7 @@ e. install generated ios-debug-0.4.0.vsix
 
 我们需要把代码的 AST(抽象语法树)的数据提交给 VSCode, 有一个开源代码库实现了这个功能
 
-https://github.com/SolaWing/xcode-build-server
+<https://github.com/SolaWing/xcode-build-server>
 
 这个库可以把编译后的 .pcm 文件提交给 VSCode, 然后 VSCode 就可以根据 AST 提供代码自动完成提示和符号自动跳转功能。
 
@@ -253,4 +257,5 @@ https://github.com/SolaWing/xcode-build-server
 
 ### 5. 代码 HotReload
 
-参考 https://github.com/johnno1962/InjectionIII 文档配置
+参考 <https://github.com/johnno1962/InjectionIII> 文档配置
+(待补充)
