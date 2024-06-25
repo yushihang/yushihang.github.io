@@ -106,3 +106,7 @@ Waku 是一个基于 libp2p 的通信协议，用于在去中心化应用之间�
   如果这个描述为真， 那么看起来就是 "WalletConnect 运营维护的 Waku 协议的网络， 而不是我们说的 Waku 社区运营的 relay 网络本身"
 
 当然这个有待于 WalletConnect 方面的确认。
+
+另外可以作为辅助确认的是: 在最新的 WalletConnect 源码里，pub / sub / topic / relay 这些 waku 上的概念都能找到对应的使用， 但是 protocol 不是 waku, 而是 irn。
+
+这个 irn 是代表什么暂时不清楚。
