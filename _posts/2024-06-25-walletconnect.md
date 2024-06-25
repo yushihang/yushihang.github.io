@@ -52,4 +52,7 @@ DApp 通常不具有区块链钱包的功能， 所以用户在使用 DApp 时�
 
 ### WalletConnect 视频
 
-<embed src='{{ "/assets/video/2024-06-25/walletconnect.mp4"" | absolute url }}'>
+<video controls style="max-width: 100%; height: auto;">
+  <source src='{{"/assets/video/2024-06-25/walletconnect.mp4" | absolute_url }}' type="video/mp4">
+  您的浏览器不支持 HTML5 视频标签。
+</video>
