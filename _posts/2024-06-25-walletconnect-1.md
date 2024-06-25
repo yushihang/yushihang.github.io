@@ -6,7 +6,7 @@ categories: WalletConnect DApp BlockChain-Wallet
 tags: [WalletConnect, BlockChain-Wallet, DApp, ECDHE]
 ---
 
-## Web3 学习日记 - Wallet Connect 分析
+## Web3 学习日记 - Web3 学习日记 - Wallet Connect 分析 (一)
 
 ### Wallet Connect 介绍
 
@@ -50,7 +50,7 @@ DApp 通常不具有区块链钱包的功能， 所以用户在使用 DApp 时�
 
 <https://docs.walletconnect.com/advanced/multichain/rpc-reference/ethereum-rpc>
 
-### WalletConnect 视频
+### WalletConnect 用例视频
 
 <video controls style="max-width: 100%; height: auto;">
   <source src='{{"/assets/video/2024-06-25/walletconnect.mp4" | absolute_url }}' type="video/mp4">
