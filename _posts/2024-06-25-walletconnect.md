@@ -48,7 +48,7 @@ DApp 通常不具有区块链钱包的功能， 所以用户在使用 DApp 时�
 
 ### 对应的 RPC Method 列表
 
-<https://docs.walletconnect.com/advanced/multichain/rpc-reference/ethereum-rpc#eth_signtypeddata>
+<https://docs.walletconnect.com/advanced/multichain/rpc-reference/ethereum-rpc>
 
 ### WalletConnect 视频
 
