@@ -302,3 +302,7 @@ func (c *Claim) GetRevocationNonce() uint64 {
 ### 疑问
 
 我的疑问是，如果 RevNonce 重复了， 会出现什么问题?
+
+Update 2024-05-19
+
+官方答复如下: <https://github.com/0xPolygonID/issuer-node/issues/663>
