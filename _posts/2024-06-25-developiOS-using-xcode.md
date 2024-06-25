@@ -207,8 +207,6 @@ e. install generated ios-debug-0.4.0.vsix
 
 <https://github.com/SolaWing/xcode-build-server>
 
-这个库可以把编译后的 .pcm 文件提交给 VSCode, 然后 VSCode 就可以根据 AST 提供代码自动完成提示和符号自动跳转功能。
-
 #### 修改 task.json
 
 ```json
