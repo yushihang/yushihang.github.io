@@ -115,6 +115,8 @@ public extension Envelope {
 
 Envelope type2 目前在 link mode 的 wc_sessionAuthenticate 的 request 里用到(DApp -> Wallet)
 
+<https://github.com/WalletConnect/WalletConnectSwiftV2/blob/8c7e413c6f451304235ed161085ddc7947e0e6ae/Sources/WalletConnectSign/Auth/Link/LinkAuthRequester.swift#L64>
+
 ##### type0
 
 type0 采用了对称加密密钥，而且密钥是之前已经保存在了本地 keychain 里的 （使用 topic 作为 key）
@@ -214,3 +216,4 @@ public extension Envelope {
 ```
 
 Envelope type1 目前在 relay/link mode 的 wc_sessionAuthenticate 的 response 里用到(Wallet -> DApp)
+<https://github.com/WalletConnect/WalletConnectSwiftV2/blob/8c7e413c6f451304235ed161085ddc7947e0e6ae/Sources/WalletConnectSign/Auth/Services/Wallet/SessionAuthenticateResponder.swift#L57-L62>
