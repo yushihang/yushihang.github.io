@@ -110,3 +110,16 @@ Waku 是一个基于 libp2p 的通信协议，用于在去中心化应用之间�
 另外可以作为辅助确认的是: 在最新的 WalletConnect 源码里，pub / sub / topic / relay 这些 waku 上的概念都能找到对应的使用， 但是 protocol 不是 waku, 而是 irn。
 
 这个 irn 是代表什么暂时不清楚。
+
+- Update 2024-07-07
+  参见这里 <https://github.com/orgs/WalletConnect/discussions/4637>
+
+  总结如下:
+
+  1. 所有的 server 和 relay network 都是 walletconnect 来负担的， 他们没有提到收费计划
+  2. walletconnect 虽然在很多文档里说他们的 Relay network 用了 Waku ，但是他们确认，曾经是使用过 Waku， 但是因为没有很好的解决延迟问题，现在已经用回了中心化的 Relay 网络 。
+     他们文档里还提到使用了 Waku 的部分，是因为文档没有及时更新。
+  3. 关于中心化的 relay network 是否可以自己部署的问题，我看 WallectConnect 讨论区里很多人也提出了类似问题。 他们的答复是说这个不在计划表里， 他们的主要计划是去中心化网络。
+     我也再次问了一下他们，最新的计划是否仍然如此，他们说是的。
+     我就解释了一下，如果不能自己部署 relay network 的话， 可能遇到内部安全审查问题，他给了一个他们 WallectConnect 找第三方（Trail of Bits）进行安全审查的报告链接，里面有审计报告原文和他们对审计结果的一些处理。
+     也给了一个 WalletConect 负责安全审查的邮箱，说有疑问可以联系。
