@@ -8,6 +8,18 @@ tags: [Web3 Kotlin Java Android]
 
 ## Web3 学习日记 - Web3 Android 原生库测试 (二)
 
+### web3j 的版本管理问题
+
+web3j 不知道为什么，在 maven 上有一个目前为止版本号最高的 5.0.0, 发布于 2020 年 5 月
+而真正最新的版本是 4.12.0
+
+参见如下链接
+
+<https://github.com/hyperledger/web3j/issues/1976#issuecomment-1809820843>
+<https://mvnrepository.com/artifact/org.web3j/core>
+
+而 Android Studio 会根据版本号字符串的比较规则来提示升级，注意不要错误的"升级"到 5.0.0 版本了。
+
 ### web3j 和测试代码 repo
 
 <https://github.com/hyperledger/web3j>
