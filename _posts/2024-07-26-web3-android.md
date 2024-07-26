@@ -2,8 +2,8 @@
 layout: post
 title: Web3学习日记 - Web3 Android 原生库测试 (二)
 subtitle:
-categories: Web3 Swift Kotlin Android iOS
-tags: [Web3 Swift Kotlin Android iOS]
+categories: Web3 Kotlin Java Android
+tags: [Web3 Kotlin Java Android]
 ---
 
 ## Web3 学习日记 - Web3 Android 原生库测试 (二)
