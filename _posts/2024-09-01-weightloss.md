@@ -23,13 +23,13 @@ tags: [weight-loss muscle]
 
 首先扔几篇文章/论文:
 
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5421125/ (Preserving Healthy Muscle during Weight Loss)
+<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5421125/>(Preserving Healthy Muscle during Weight Loss)
 
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5161655/ (Effects of Weight Loss on Lean Mass, Strength, Bone, and Aerobic Capacity)
+<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5161655/> (Effects of Weight Loss on Lean Mass, Strength, Bone, and Aerobic Capacity)
 
-https://www.nature.com/articles/s41586-022-04828-5 (An exercise-inducible metabolite that suppresses feeding and obesity)
+<https://www.nature.com/articles/s41586-022-04828-5> (An exercise-inducible metabolite that suppresses feeding and obesity)
 
-https://www.nature.com/articles/s41467-022-28662-5 (Randomized controlled trial for time-restricted eating in healthy volunteers without obesity)
+<https://www.nature.com/articles/s41467-022-28662-5> (Randomized controlled trial for time-restricted eating in healthy volunteers without obesity)
 
 类似的文章还有很多, 可以自行搜索～ 先建立一个理论基础，给自己一点信心，后面才不容易放弃。
 
@@ -67,6 +67,38 @@ https://www.nature.com/articles/s41467-022-28662-5 (Randomized controlled trial 
 
 我查到的资料说碳水是神经系统供能的唯一来源。至少我自己的工作是要大量依赖脑力劳动的，所以低碳饮食可能对我不太适用。
 
-### 3. 饮食
+每天睡前最好能有一点饥饿感，这样第二天起来称重量效果不错。
+
+### 3. 运动
+
+1. 早睡早起，保证充足的睡眠，以及肌肉的休息恢复。
+2. 我是 6-7 点起床，先做一小时无氧，然后再看身体状况做 30 分钟到 1 小时的有氧。如果去公司的话早上锻炼时间会短一些，如果是在家上班的那天，早上一般就可以做到两个小时的锻炼时间。
+3. 无氧如果有健身房的话，直接用器材就行，网上有各种 1 分化  、3 分化、5 分化的练习介绍，各种视频和教程都很详细。寻找适合自己的就好。
+
+   如果在家，哑铃、瑜伽垫、俯卧撑都可以，网上也是大把资料，例如囚徒健身啥的。
+
+   无氧我一般每组 8-12 个，一种运动做 4-5 组。
+
+4. 有氧的话如果健身房我一般选择椭圆机，因为这东西据说不伤膝盖，而且我可以看视频，之前是看各种综艺节目。 后来找到了一些跟技术相关的课程视频，基本看这个就可以消磨时间了。
+
+   在家的话强烈推荐 switch 上的健身拳击，特别是北斗神拳版本，非常有意思，不会觉得枯燥。
+
+   我以前也试过去楼下小区转圈，只要心里带着一个技术问题去边快走边思考，一个小时很快就过去了。不过这个受天气原因限制。
+
+   有氧运动可以多种运动轮换着来，这样容易坚持下去，例如跳绳，超慢跑啥的。
+
+   另外我以前是先有氧的， 后来看了一些介绍，无氧时需要消耗肌肉里的糖原, 如果先做有氧把这些消耗了，无氧的时候可能没力气。
+
+   所以我也改成了先无氧后有氧。
+
+5. 如果我在家，中午和晚上也会抽空做 1 小时左右的有氧。 如果去公司，那中午两个小时午休我基本都在各大商场里遛弯。这样基本可以保证每天 3 个小时以上的锻炼时间。
+
+6. 网上是说一周锻炼 5-6 次最好，要留一天给身体休息。
+
+   但我考虑到自己本来就不是意志坚定的人，休息一天可能会变成连续休息，还是每天让自己养成锻炼的习惯吧。
 
 ### 4. 健康监测
+
+1. 体脂秤（不要相信每次的测量数据绝对值，只看变化趋势就好）、监控心率手环或者手表、各种测身体指标的试纸需要准备好。
+2. 定期去医院体检，健康第一。
+3. 减重之后，食谱和食量都应该随着调整，千万不要有减肥成功了可以每天大鱼大肉的想法。反弹之后会非常打击信心。
