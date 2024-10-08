@@ -484,7 +484,7 @@ Everything went okay
 
 从结果看, 约束数量为 0
 
-#### circuit.sym
+#### LinearAdder.sym
 
 ```
 1,1,0,main.sum
