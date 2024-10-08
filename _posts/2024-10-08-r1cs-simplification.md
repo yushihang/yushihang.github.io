@@ -81,7 +81,7 @@ Everything went okay
 6,-1,0,main.c.in[1]
 ```
 
-根据<https://docs.circom.io/circom-language/formats/sym/>中的解释，我们可以得到如下的表格
+参照<<https://docs.circom.io/circom-language/formats/sym/>，我们可以得到如下表格
 
 | #s  | #w  | #c  |     name     |
 | :-: | :-: | :-: | :----------: |
@@ -210,3 +210,372 @@ r1cs.json
 | main.c.in[1] | 1 + 2 \* main.in[0] + main.in[1] |
 
 这和 circom 中的语义以及优化后的 r1cs.json 可以对应上
+
+### example2
+
+#### circuit code
+
+```circuit
+
+pragma circom 2.0.0;
+
+template calc () {
+
+   // Declaration of signals.
+   signal T2;
+   signal T1;
+   signal z;
+
+   signal output y;
+
+   signal input x;
+
+   //y = x ** 3 + 2x + 5
+   // Constraints.
+   T1 <== x * x;
+   z <== T1 * x;
+   T2 <== z + 2 * x;
+   y <== T2 + 5;
+}
+
+component main  = calc();
+```
+
+#### compile
+
+```console
+❯ circom circuit.circom --r1cs --wasm --simplification_substitution --O2 --sym --inspect
+template instances: 1
+non-linear constraints: 2
+linear constraints: 0
+public inputs: 0
+private inputs: 1
+public outputs: 1
+wires: 4
+labels: 6
+Written successfully: ./circuit.r1cs
+Written successfully: ./circuit.sym
+Written successfully: ./circuit_js/circuit.wasm
+Everything went okay
+```
+
+#### export r1cs.json
+
+```console
+❯ snarkjs r1cs export json circuit.r1cs circuit.r1cs.json
+[INFO]  snarkJS: undefined: Loading constraints: 0/2
+[INFO]  snarkJS: undefined: Loading map: 0/4
+```
+
+#### circuit.sym
+
+```
+1,1,0,main.y
+2,2,0,main.x
+3,-1,0,main.T2
+4,3,0,main.T1
+5,-1,0,main.z
+```
+
+参照<https://docs.circom.io/circom-language/formats/sym/>，我们可以得到如下表格
+
+| #s  | #w  | #c  | name |
+| :-: | :-: | :-: | :--: |
+|  1  |  1  |  0  |  y   |
+|  2  |  2  |  0  |  x   |
+|  3  | -1  |  0  |  T2  |
+|  4  |  3  |  0  |  T1  |
+|  5  | -1  |  0  |  z   |
+
+编译后的 witness 数组为[ 1, y, x, T1 ]
+
+#### r1cs
+
+r1cs.json
+
+```json
+{
+  "n8": 32,
+  "prime": "21888242871839275222246405745257275088548364400416034343698204186575808495617",
+  "nVars": 4,
+  "nOutputs": 1,
+  "nPubInputs": 0,
+  "nPrvInputs": 1,
+  "nLabels": 6,
+  "nConstraints": 2,
+  "useCustomGates": false,
+  "constraints": [
+    [
+      {
+        "2": "21888242871839275222246405745257275088548364400416034343698204186575808495616"
+      },
+      {
+        "2": "1"
+      },
+      {
+        "3": "21888242871839275222246405745257275088548364400416034343698204186575808495616"
+      }
+    ],
+    [
+      {
+        "3": "21888242871839275222246405745257275088548364400416034343698204186575808495616"
+      },
+      {
+        "2": "1"
+      },
+      {
+        "0": "5",
+        "1": "21888242871839275222246405745257275088548364400416034343698204186575808495616",
+        "2": "2"
+      }
+    ]
+  ],
+  "map": [0, 1, 2, 4],
+  "customGates": [],
+  "customGatesUses": []
+}
+```
+
+#### w◯A \* w◯B = w◯C
+
+| witness |  1  |  y  |  x  | T1  |
+| :-----: | :-: | :-: | :-: | :-: |
+|    A    |  0  |  0  | -1  |  0  |
+|    B    |  3  |  0  |  1  |  0  |
+|    C    |  0  |  0  |  0  | -1  |
+
+w◯A 对应的表达式为 -x
+
+w◯B 对应的表达式为 x
+
+w◯C 对应的表达式为 -T1
+
+w◯A \* w◯B = w◯C 也就是 `-x * x = -T1`
+
+这对应着 circom 中的`T1 <== x * x;`
+
+| witness |  1  |  y  |  x  | T1  |
+| :-----: | :-: | :-: | :-: | :-: |
+|    A    |  0  |  0  |  0  | -1  |
+|    B    |  3  |  0  |  1  |  0  |
+|    C    |  5  | -1  |  2  |  0  |
+
+w◯A 对应的表达式为 -T1
+
+w◯B 对应的表达式为 x
+
+w◯C 对应的表达式为 5 - y + 2x
+
+w◯A \* w◯B = w◯C 也就是 `-T1 * x = 5 - y + 2x`
+
+等式两边移项
+
+`y = T1 * x + 2x + 5`
+
+对应着 circom 中如下代码优化后的结果
+
+```circom
+   z <== T1 * x;
+   T2 <== z + 2 * x;
+   y <== T2 + 5;
+```
+
+#### simplify_substitutions.json
+
+```json
+{
+  "substitution": {
+    "5": {
+      "0": "21888242871839275222246405745257275088548364400416034343698204186575808495612",
+      "1": "1",
+      "2": "21888242871839275222246405745257275088548364400416034343698204186575808495615"
+    },
+    "3": {
+      "0": "21888242871839275222246405745257275088548364400416034343698204186575808495612",
+      "1": "1"
+    }
+  }
+}
+```
+
+因为 r1cs 中 prime 值如下
+`"prime": "21888242871839275222246405745257275088548364400416034343698204186575808495617"`
+
+可以将 json 理解为如下内容
+
+```json
+{
+  "substitution": {
+    //z: (5,-1,0,main.z)
+    "5": {
+      "0": "-5", // -5 * 1
+      "1": "1", //1 * y (1,1,0,main.y)
+      "2": "-2" //-2 * x (2,2,0,main.x)
+    },
+    //T2: (3,-1,0,main.T2)
+    "3": {
+      "0": "-5", // -5 * 1
+      "1": "1" //1 * y (1,1,0,main.y)
+    }
+  }
+}
+```
+
+- "5": { "0": "-5", "1": "1", "2": "-2" }
+  z 被优化为 -5 + y - 2x
+  这与 circom 中的如下代码语义一致
+
+  ```
+  T2 <== z + 2 * x;
+  y <== T2 + 5;
+  ```
+
+  代入消除 T2 后 `y = z + 2x + 5`
+
+  移项后 `z = -5 + y - 2x`
+
+- "3": { "0": "-5", "1": "1"}
+  T2 被优化为 -5 + y
+  这与 circom 中的如下代码语义一致
+
+  ```
+  y <== T2 + 5;
+  ```
+
+### example3
+
+#### circuit code
+
+```circuit
+pragma circom 2.0.0;
+template LinearAdder() {
+    signal input a;
+    signal input b;
+    signal output sum;
+    signal temp;
+
+    temp <== a + b;
+    sum <== temp * 2;
+}
+
+component main{public[a]} = LinearAdder();
+```
+
+#### compile
+
+```console
+❯ circom LinearAdder.circom --r1cs --wasm --simplification_substitution --O2 --sym --inspect
+
+template instances: 1
+non-linear constraints: 0
+linear constraints: 0
+public inputs: 1
+private inputs: 1 (none belong to witness)
+public outputs: 1
+wires: 3
+labels: 5
+Written successfully: ./LinearAdder.r1cs
+Written successfully: ./LinearAdder.sym
+Written successfully: ./LinearAdder_js/LinearAdder.wasm
+Everything went okay
+❯ snarkjs r1cs export json LinearAdder.r1cs LinearAdder.r1cs.json
+[INFO]  snarkJS: undefined: Loading map: 0/3
+```
+
+从结果看, 约束数量为 0
+
+#### circuit.sym
+
+```
+1,1,0,main.sum
+2,2,0,main.a
+3,-1,0,main.b
+4,-1,0,main.temp
+```
+
+编译后的 witness 数组为[1, sum, a]
+
+#### r1cs
+
+r1cs.json
+
+```json
+{
+  "n8": 32,
+  "prime": "21888242871839275222246405745257275088548364400416034343698204186575808495617",
+  "nVars": 3,
+  "nOutputs": 1,
+  "nPubInputs": 1,
+  "nPrvInputs": 1,
+  "nLabels": 5,
+  "nConstraints": 0,
+  "useCustomGates": false,
+  "constraints": [],
+  "map": [0, 1, 2],
+  "customGates": [],
+  "customGatesUses": []
+}
+```
+
+同样没有约束
+
+#### simplify_substitutions.json
+
+```json
+{
+  "substitution": {
+    "3": {
+      "0": "0",
+      "1": "10944121435919637611123202872628637544274182200208017171849102093287904247809",
+      "2": "21888242871839275222246405745257275088548364400416034343698204186575808495616"
+    },
+    "4": {
+      "0": "0",
+      "1": "10944121435919637611123202872628637544274182200208017171849102093287904247809",
+      "2": "0"
+    }
+  }
+}
+```
+
+因为 r1cs 中 prime 值如下
+`"prime": "21888242871839275222246405745257275088548364400416034343698204186575808495617"`
+
+所以`21888242871839275222246405745257275088548364400416034343698204186575808495616`可以理解为`-1`
+
+`10944121435919637611123202872628637544274182200208017171849102093287904247809`可以理解为`0.5`
+
+可以将 json 理解为如下内容
+
+```json
+{
+  "substitution": {
+    // b: (3,-1,0,main.b)
+    "3": {
+      "0": "0", // 0 * 1
+      "1": "0.5", // 0.5 * sum (1,1,0,main.sum)
+      "2": "-1" //-1 * a (2,2,0,main.a)
+    },
+    // temp: (4,-1,0,main.temp)
+    "4": {
+      "0": "0", // 0 * 1
+      "1": "0.5", // 0.5 * sum (1,1,0,main.sum)
+      "2": "0" //0 * a (2,2,0,main.a)
+    }
+  }
+}
+```
+
+这里其实已经跟<https://docs.circom.io/circom-language/formats/simplification-json/>中的`where the linear expression is represented by a dictionary with the signal numbers as strings occurring in the linear expression (with non-zero coefficient) as entries and their coefficients (as string) as values: { "sig_num_l1": "coef_1", ... , "sig_num_lm": "coef_m"}` 有冲突了
+
+`"0": "0"` 的第二个"0"已经不是 with non-zero coefficient 了。
+
+- "3": { "0": "0", "1": "0.5", "2": "-1" }
+
+  `b` 被优化为 `0.5 * sum - a`
+
+  转换后可以得到`sum = 2 * (a + b)`, 这跟 circom 的语义一致
+
+- "4": { "0": "0", "1": "0.5", "2": "0" }
+  `temp` 被优化为 `0.5 * sum`
+  这与 circom 中的`sum <== temp * 2;` 语义一致
