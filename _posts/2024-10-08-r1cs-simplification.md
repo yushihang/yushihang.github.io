@@ -81,7 +81,7 @@ Everything went okay
 6,-1,0,main.c.in[1]
 ```
 
-参照<<https://docs.circom.io/circom-language/formats/sym/>，我们可以得到如下表格
+参照<https://docs.circom.io/circom-language/formats/sym/>，我们可以得到如下表格
 
 | #s  | #w  | #c  |     name     |
 | :-: | :-: | :-: | :----------: |
