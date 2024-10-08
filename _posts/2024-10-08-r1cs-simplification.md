@@ -202,10 +202,11 @@ r1cs.json
   "6": { "0": "1", "2": "2", "3": "1" }对应的含义是, main.c.in[1] 在编译优化过程中被替换为了 1 \* 1 + 1 \* main.in[0] \* 2 + main.in[1] \* 1
 
 总结一下
-| 原 Signal | 替换后的表达式|
-| :-----: | :-: |
-|main.c.out| main.out|
-|main.c.in[0]| main.in[0]|
-|main.c.in[1]| 1 + 2\*main.in[0] + main.in[1]|
+
+|  原 Signal   |          替换后的表达式           |
+| :----------: | :-------------------------------: |
+|  main.c.out  |             main.out              |
+| main.c.in[0] |            main.in[0]             |
+| main.c.in[1] | `1 + 2 * main.in[0] + main.in[1]` |
 
 这和 circom 中的语义以及优化后的 r1cs.json 可以对应上
