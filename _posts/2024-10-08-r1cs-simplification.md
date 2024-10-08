@@ -203,10 +203,10 @@ r1cs.json
 
 总结一下
 
-|  原 Signal   |          替换后的表达式           |
-| :----------: | :-------------------------------: |
-|  main.c.out  |             main.out              |
-| main.c.in[0] |            main.in[0]             |
-| main.c.in[1] | `1 + 2 * main.in[0] + main.in[1]` |
+|  原 Signal   |          替换后的表达式          |
+| :----------: | :------------------------------: |
+|  main.c.out  |             main.out             |
+| main.c.in[0] |            main.in[0]            |
+| main.c.in[1] | 1 + 2 \* main.in[0] + main.in[1] |
 
 这和 circom 中的语义以及优化后的 r1cs.json 可以对应上
