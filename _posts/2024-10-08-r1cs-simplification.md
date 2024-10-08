@@ -70,7 +70,7 @@ Everything went okay
 [INFO]  snarkJS: undefined: Loading map: 0/4
 ```
 
-#### simplfy.sym
+#### simplify.sym
 
 ```
 1,1,1,main.out
