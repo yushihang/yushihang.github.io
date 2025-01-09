@@ -124,6 +124,11 @@ tags: [Web3, PrivadoID, polygonID, ZKProof, Cross-Chain, Verification]
   docker run -p 8080:8080 driver-did-polygonid:local
   ```
 
+  ```bash
+  ❯ docker run -p 8080:8080 driver-did-polygonid:local
+  2025/01/09 08:47:10 HTTP server start on '0.0.0.0:8080'
+  ```
+
 - 测试
 
   ```bash
@@ -132,4 +137,73 @@ tags: [Web3, PrivadoID, polygonID, ZKProof, Cross-Chain, Verification]
 
   ```bash
   newman run tests/e2e/users_tests.postman_collection.json
+  ```
+
+  ```bash
+  ❯ newman run tests/e2e/users_tests.postman_collection.json
+  newman
+
+
+  Nameservice users e2e tests
+
+  → Reslover state by NOT published genesis state
+  GET http://localhost:8080/1.0/identifiers/did:polygonid:polygon:amoy:2qR3ufJ84dtdHp4hokxH9tG3E3SzLdyBcjdmEz6NH1?state=bc4c42a731152f7c76c5616b59d82fb413d77781d26cb52967e837de85788416 [200 OK, 799B, 356ms]
+  ✓ Status code is 200
+  ✓ Content-Type header is application/json
+  ✓ Did doc not found
+
+  → Resolve NOT published did
+  GET http://localhost:8080/1.0/identifiers/did:polygonid:polygon:amoy:2qR3ufJ84dtdHp4hokxH9tG3E3SzLdyBcjdmEz6NH1 [200 OK, 1.08kB, 1003ms]
+  ✓ Status code is 200
+  ✓ Content-Type header is application/json
+  ✓ Did doc not found
+
+  → Resolve state by gist for not published Issuer
+  GET http://localhost:8080/1.0/identifiers/did:polygonid:polygon:amoy:2qR3ufJ84dtdHp4hokxH9tG3E3SzLdyBcjdmEz6NH1?gist=e1421e1e9bb8d06dd1d8b190091adab9ff34ab99b5711b5941c5a80b412cc40e [200 OK, 1.09kB, 696ms]
+  ✓ Status code is 200
+  ✓ Content-Type header is application/json
+
+  → Resolve published did
+  GET http://localhost:8080/1.0/identifiers/did:polygonid:polygon:amoy:2qY71pSkdCsRetTHbUA4YqG7Hx63Ej2PeiJMzAdJ2V [200 OK, 1.43kB, 1014ms]
+  ✓ Status code is 200
+  ✓ Content-Type header is application/json
+  ✓ Did doc not found
+
+  → Resolve state by state
+  GET http://localhost:8080/1.0/identifiers/did:polygonid:polygon:amoy:2qY71pSkdCsRetTHbUA4YqG7Hx63Ej2PeiJMzAdJ2V?state=9a73b7f0f5f0a9b5e2dab8bdcecf4fa003ef531c1c61307c79483d51f5474c1e [200 OK, 1.15kB, 350ms]
+  ✓ Status code is 200
+  ✓ Content-Type header is application/json
+  ✓ Did doc not found
+
+  → Resolve state by gist
+  GET http://localhost:8080/1.0/identifiers/did:polygonid:polygon:amoy:2qY71pSkdCsRetTHbUA4YqG7Hx63Ej2PeiJMzAdJ2V?gist=b34ff91e0a244db80ad516a1affa537ad0af62fe3ffc8255ecf1db446b17e917 [200 OK, 1.45kB, 1044ms]
+  ✓ Status code is 200
+  ✓ Content-Type header is application/json
+  ✓ Did doc not found
+
+  → Resolve state by issuer genesis state
+  GET http://localhost:8080/1.0/identifiers/did:polygonid:polygon:amoy:2qY71pSkdCsRetTHbUA4YqG7Hx63Ej2PeiJMzAdJ2V?state=21c89984e3b08f735f1da0443b0aa4afe92c400c1d33dfb6867662360328fd0d [200 OK, 1.15kB, 335ms]
+  ✓ Status code is 200
+  ✓ Content-Type header is application/json
+  ✓ Did doc not found
+
+  ┌─────────────────────────┬─────────────────────┬─────────────────────┐
+  │ │ executed │ failed │
+  ├─────────────────────────┼─────────────────────┼─────────────────────┤
+  │ iterations │ 1 │ 0 │
+  ├─────────────────────────┼─────────────────────┼─────────────────────┤
+  │ requests │ 7 │ 0 │
+  ├─────────────────────────┼─────────────────────┼─────────────────────┤
+  │ test-scripts │ 7 │ 0 │
+  ├─────────────────────────┼─────────────────────┼─────────────────────┤
+  │ prerequest-scripts │ 0 │ 0 │
+  ├─────────────────────────┼─────────────────────┼─────────────────────┤
+  │ assertions │ 20 │ 0 │
+  ├─────────────────────────┴─────────────────────┴─────────────────────┤
+  │ total run duration: 4.9s │
+  ├─────────────────────────────────────────────────────────────────────┤
+  │ total data received: 7.39kB (approx) │
+  ├─────────────────────────────────────────────────────────────────────┤
+  │ average response time: 685ms [min: 335ms, max: 1044ms, s.d.: 311ms] │
+  └─────────────────────────────────────────────────────────────────────┘
   ```
