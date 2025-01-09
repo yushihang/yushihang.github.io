@@ -10,32 +10,46 @@ tags: [Web3, PrivadoID, polygonID, ZKProof, Cross-Chain, Verification]
 
 ### 资料
 
-- Privado.ID Cross Chain Verification: <https://docs.privado.id/docs/verifier/on-chain-verification/cross-chain/>
+- Privado.ID Cross Chain Verification:
+
+<https://docs.privado.id/docs/verifier/on-chain-verification/cross-chain/>
 
 - oracle repo:
+
   orig: <https://github.com/0xPolygonID/driver-did-polygonid>
+
   fork: <https://github.com/privadoID-study/archive-2025-01-driver-did-polygonid>
 
 - flutter sdk repo:
+
   orig: <https://github.com/0xPolygonID/polygonid-flutter-sdk>
+
   fork: <https://github.com/privadoID-study/archive-2025-01-polygonid-flutter-sdk>
 
   - commit: around 2023-12-01
 
 - c-polygonid lib repo:
+
   orig: <https://github.com/0xPolygonID/c-polygonid>
+
   fork: <https://github.com/privadoID-study/archive-2025-01-c-polygonid>
 
-  - commit: https://github.com/0xPolygonID/c-polygonid/commit/e420c85f5ec2011053768102ad8adc37aab590a2#diff-1025cc72a1ead96612ce3c7351a4ac5b62776b020c032fc12b67c39b14f1fe33
+  - commit:
+
+  <https://github.com/0xPolygonID/c-polygonid/commit/e420c85f5ec2011053768102ad8adc37aab590a2#diff-1025cc72a1ead96612ce3c7351a4ac5b62776b020c032fc12b67c39b14f1fe33>
 
 - test cases repo:
+
   orig: <https://github.com/0xPolygonID/contracts>
+
   fork: <https://github.com/privadoID-study/archive-2025-01-polygonid-contracts>
 
 - demo ios app repo:
+
   <https://github.com/privadoID-study/archive-2025-01-hsbc-polygonid-flutter-sdk>
 
 - off-line vp verification script repo:
+
   <https://github.com/privadoID-study/archive-2025-01-python-verifier-for-iden3-zkp>
 
 ### 如何编译 原生库 + Flutter SDK + iOS App
@@ -45,11 +59,15 @@ tags: [Web3, PrivadoID, polygonID, ZKProof, Cross-Chain, Verification]
 ### 如何构建 oracle 并运行
 
 - 安装 Docker Desktop 并运行
+
   <https://www.docker.com/products/docker-desktop/>
 
 - 安装 docker cli 和 golang
+
+  ```bash
   brew install docker
   brew install go
+  ```
 
 - clone oracle repo
 
@@ -59,7 +77,9 @@ tags: [Web3, PrivadoID, polygonID, ZKProof, Cross-Chain, Verification]
   ```
 
 - 配置 (fork repo 里已经包含)
+
   创建 resolvers.settings.yaml(以 Amoy 为例)
+
   不同的合约地址可以在这里查询:<https://docs.privado.id/docs/smart-contracts/>
 
   ```yaml
@@ -146,7 +166,6 @@ tags: [Web3, PrivadoID, polygonID, ZKProof, Cross-Chain, Verification]
   ❯ newman run tests/e2e/users_tests.postman_collection.json
   newman
 
-
   Nameservice users e2e tests
 
   → Reslover state by NOT published genesis state
@@ -210,3 +229,5 @@ tags: [Web3, PrivadoID, polygonID, ZKProof, Cross-Chain, Verification]
   │ average response time: 685ms [min: 335ms, max: 1044ms, s.d.: 311ms] │
   └─────────────────────────────────────────────────────────────────────┘
   ```
+
+</details>
