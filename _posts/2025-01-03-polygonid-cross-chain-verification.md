@@ -12,7 +12,7 @@ tags: [Web3, PrivadoID, polygonID, ZKProof, Cross-Chain, Verification]
 
 - Privado.ID Cross Chain Verification:
 
-<https://docs.privado.id/docs/verifier/on-chain-verification/cross-chain/>
+  <https://docs.privado.id/docs/verifier/on-chain-verification/cross-chain/>
 
 - oracle repo:
 
