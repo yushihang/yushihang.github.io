@@ -230,4 +230,4 @@ tags: [Web3, PrivadoID, polygonID, ZKProof, Cross-Chain, Verification]
   └─────────────────────────────────────────────────────────────────────┘
   ```
 
-</details>
+  </details>
