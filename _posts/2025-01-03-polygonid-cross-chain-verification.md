@@ -226,3 +226,28 @@ tags: [Web3, PrivadoID, polygonID, ZKProof, Cross-Chain, Verification]
   │ average response time: 685ms [min: 335ms, max: 1044ms, s.d.: 311ms] │
   └─────────────────────────────────────────────────────────────────────┘
   ```
+
+### 如何运行 Cross Chain 测试用例
+
+```bash
+node -v
+#v22.12.0
+
+git clone git@github.com:0xPolygonID/contracts.git
+cd contracts
+
+npm i
+npm i @iden3/contracts
+
+npx hardhat test test/verifiers/erc20-with-universal-verifier.ts
+```
+
+```bash
+    ✔ Example ERC20 Verifier: set zkp request Sig validator + submit zkp response V2 (81ms)
+    ✔ Example ERC20 Verifier: set zkp request Mtp validator + submit zkp response V2 (82ms)
+
+
+  2 passing (2s)
+```
+
+### 如何从 VP 和 oracle 中提取测试数据并更新测试用例
