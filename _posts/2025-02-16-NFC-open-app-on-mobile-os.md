@@ -204,6 +204,10 @@ Apple 的文档里提到，Advanced App Clip Experiences 的部分功能是需�
 
    ![NFC Chips]({{"/assets/images/2025-02-16/nfc_chips.jpg" | absolute url }})
 
+##### 数据安全问题
+
+考虑到数据安全问题，nfc tag 中应该不要存放敏感数据，而是存放在网站后台，nfc tag 中只提供网页 param，用户需要鉴权后才能访问到。
+
 ##### 补充说明
 
 需要声明一下，我目前没有找到支付宝团队的官方细节剖析，以上的内容都是基于现有文档和可能的技术方案，结合我自己的使用体验进行的推测。
@@ -212,7 +216,7 @@ Apple 的文档里提到，Advanced App Clip Experiences 的部分功能是需�
 
 我们是摸着支付宝过河，才把这后面的技术可行路径搞明白，可想而知作为第一个实现碰一下功能的团队，他们在其中进行了多少摸索和尝试取舍。
 
-##### 使用到的工具列表
+#### 使用到的工具列表
 
 - 下载 iOS ipa 和查看 Entitlements
   - [Apple Configurator](https://apps.apple.com/us/app/apple-configurator/id1037126344?mt=12)
