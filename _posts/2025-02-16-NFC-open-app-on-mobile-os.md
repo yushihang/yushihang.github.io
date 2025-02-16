@@ -125,6 +125,9 @@ NFC 标签同样也支持 Universal Links / App Links.
 
 此外，因为 Google Play Console 在大陆地区无法被普通用户访问，所以 Android App Links 在国内也难以被使用。
 
+而实际上, 就算 Android 支持了 App Links, 也会出现如下需要用户二次确认的情况:
+![Universal Link]({{ "/assets/images/2025-02-16/alipay_nfc_url_a.jpg" | absolute url }})
+
 ###### iOS App Clip
 
 什么是 iOS App Clip，参见<https://developer.apple.com/app-clips/>
