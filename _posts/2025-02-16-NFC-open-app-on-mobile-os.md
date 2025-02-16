@@ -140,6 +140,8 @@ AppClip 默认可以通过这类链接被拉起: <https://appclip.apple.com/id?p
 
 此外，近年 Apple 还为 App Clip 提供了一个叫 Advanced App Clip Experiences 的功能，这个功能可以让 App Clip 支持更多的场景, 和支付宝碰一下场景相关的有，用户可以自定义半屏页面的背景图。也可以配置自定义 URL 来写入 NFC 或者通过二维码拉起 App Clip.
 
+Apple 的文档里提到，Advanced App Clip Experiences 的部分功能是需要 iOS 17+才支持，猜测支付宝推出碰一下功能的时间节点有可能和这个相关。
+
 <https://developer.apple.com/documentation/appclip/creating-app-clip-codes-with-app-store-connect>
 
 <https://developer.apple.com/help/app-store-connect/offer-app-clip-experiences/offer-an-advanced-app-clip-experience/>
