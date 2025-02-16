@@ -142,6 +142,30 @@ AppClip 默认可以通过这类链接被拉起: https://appclip.apple.com/id?p=
 
 ![Advanced App Clip]({{"/assets/images/2025-02-16/app_clip_bg.jpg" | absolute url }})
 
+通过对支付宝碰一下贴纸标签的信息读取, iOS 实际使用的 App Clip Url 格式为
+
+<https://render.alipay.com/p/s/ulink/dc0?s=dc&scheme=alipay%3A%2F%2Fnfc%2Fapp%3Fid%3Dxxxxxxx3%26t%3Dxxxxxxxxxx>
+
+##### Android Application NFC Tag
+
+因为 iOS 文档<https://developer.apple.com/documentation/corenfc/adding-support-for-background-tag-reading>中明确提到不支持 custom schema,
+
+![Advanced App Clip]({{"/assets/images/2025-02-16/ios_no_support_custom_schema.jpg" | absolute url }})
+
+这意味着 iOS 侧必须使用 https://开头的 schema, 不能使用 myapp://这种类型的 schema(对应 Android 的 Deep Link).
+
+而又因为大陆地区的 Android 系统因为无法连接到 Google Play, 又无法使用 https:// 开头的 App Links。
+
+所以对于支付宝是如何实现同一个 NFC 标签兼容 iOS 和 Android, 我疑惑了很久，后来通过对支付宝碰一下贴纸标签的信息读取, 发现他同时写入两条数据，一条给 iOS 使用， 一条给 Android 使用，如下图。
+
+![NFC Chips]({{"/assets/images/2025-02-16/nfc_data.jpg" | absolute url }})
+
+而操作系统对自己不认识的数据，会略过去处理下一条，所以两者在实现兼容的同时不会冲突。
+
+这里还有一个细节，Android 使用的第二条数据只有 App 的 applicationId (com.xxx.xxx), 这样虽然保证了不会有其他恶意 app 来截取 NFC 里的数据(系统里的 app 的 applicationId 必须唯一), 但是没有具体的业务数据传递给 app, 拉起支付宝之后是如何跳转到对应的点餐或者支付页面的?
+
+目前我查看文档后的猜测是,虽然这条数据只有 applicationId,但是具有这个 applicationId 的 App 被系统拉起后，是可以通过 api 主动获取到其他 NDEF 数据的, 而 NDEF 中的 iOS 的 App Clip Url 是有业务参数的，所以 Android App 也可以读取到这部分数据跳转到对应页面。
+
 ##### 总结如下，我们对 NFC 碰一下的实现技术猜测:
 
 1. iOS NFC 碰一下打开 App
@@ -160,6 +184,13 @@ AppClip 默认可以通过这类链接被拉起: https://appclip.apple.com/id?p=
 4. Android 如何读取具体业务需要的 param
    Android 的 application/android_app 信息没有附带额外信息，但是 App 可以主动去读取 NDEF 信息里的第二条数据，也就是通过 iOS Clip 的 Custom URL + param 来获取业务数据 (待实现确认)
 
+5. 因为目前我使用的 NFC 芯片无法写入两条数据，但我分别写入单条数据后，都可以在 iOS 和 Android 设备上实现碰一下拉起支付宝，其中 iOS 可以直接拉起对应的业务页面，Android 因为缺少了 iOS 的 url 数据，只能拉起支付宝。
+   等我新买的大容量 nfc 芯片到货后，会完善这类测试。
+
+   不同芯片的容量见下图:
+
+   ![NFC Chips]({{"/assets/images/2025-02-16/nfc_chips.jpg" | absolute url }})
+
 ##### 补充说明
 
 需要声明一下，我目前没有找到支付宝团队的官方细节剖析，以上的内容都是基于现有文档和可能的技术方案，结合我自己的使用体验进行的推测。
@@ -167,3 +198,10 @@ AppClip 默认可以通过这类链接被拉起: https://appclip.apple.com/id?p=
 总结： nfc 碰一下是扫码功能的一个替代或者衍生，但是支付宝的碰一下的用户体验做的非常好，其中使用到的技术细节和流程设计非常值得我们学习。
 
 我们是摸着支付宝过河，才把这后面的技术可行路径搞明白，可想而知作为第一个实现碰一下功能的团队，他们在其中进行了多少摸索和尝试取舍。
+
+##### 使用到的工具列表
+
+- 下载 iOS ipa 和查看 Entitlements
+  - [Apple Configurator](https://apps.apple.com/us/app/apple-configurator/id1037126344?mt=12)
+  - [ipagrabber.py](https://gist.github.com/h4x0r/200de7e899c76da0c712afd18dce8a3b)
+  - codesign -d --entitlements :- <any iOS>.app
