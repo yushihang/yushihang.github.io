@@ -134,7 +134,7 @@ NFC 标签同样也支持 Universal Links / App Links.
 
 AppClip 无需实现被安装到用户的手机中，有点类似微信小程序。
 
-AppClip 默认可以通过这类链接被拉起: https://appclip.apple.com/id?p=com.alipay.iphoneclient.clip
+AppClip 默认可以通过这类链接被拉起: <https://appclip.apple.com/id?p=com.alipay.iphoneclient.clip>
 
 当我们把如上链接写入 nfc 芯片后，用 iOS 手机触碰 nfc，就可以实现支付宝目前的效果了(当然支付宝 App 需要传递的具体业务数据我们也需要模拟出来)
 
