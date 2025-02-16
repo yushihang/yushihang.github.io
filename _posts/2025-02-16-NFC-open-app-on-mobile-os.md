@@ -10,7 +10,9 @@ tags: [Android iOS NFC]
 
 ### NFC 读取场景
 
-#### 移动端 App 打开后读取 NFC 信息
+#### 移动端 App 运行后读取 NFC 信息
+
+![App read nfc]({{ "/assets/images/2025-02-16/app_read_nfc.jpg" | absolute url }})
 
 这个不是我们这篇文章重点讨论的内容，可以参见 Android 和 iOS 的如下文档
 
@@ -19,6 +21,8 @@ Android: [Near field communication] (https://developer.android.com/develop/conne
 iOS: [Building an NFC Tag-Reader App](https://developer.apple.com/documentation/corenfc/building-an-nfc-tag-reader-app)
 
 #### 移动端 App 未打开甚至未安装时，设备读取 NFC 信息后拉起 App 并将数据传递给 App，或是引导用户下载 App
+
+![OS read nfc]({{ "/assets/images/2025-02-16/os_read_nfc.jpg" | absolute url }})
 
 这个是我们这篇文章重点讨论的内容，也是我们在支付宝"碰一下"点餐或者支付时的场景。
 
@@ -35,7 +39,9 @@ iOS: [Building an NFC Tag-Reader App](https://developer.apple.com/documentation/
 
 - iOS 对于开发者和第三方 App, 只开放了有限的 NFC 读取模式。
 
-  在 iOS 上，还有一种 NFC 使用场景是通过 Apple Pay+iCloud 支付，但我们这篇文章同样不涉及这个场景
+  在 iOS 上，还有一种 NFC 使用场景是通过 Apple Pay+iCloud，但我们这篇文章同样不涉及这个场景
+
+  ![App Clip]({{ "/assets/images/2025-02-16/apple_wallet.jpg" | absolute url }})
 
 ##### 支付宝"碰一下"的使用场景
 
@@ -218,4 +224,4 @@ AppClip 默认可以通过这类链接被拉起: https://appclip.apple.com/id?p=
     - [NFC TagWriter](https://www.nxp.com/design/design-center/software/rfid-developer-resources/nfc-tagwriter-app-by-nxp:NFC-TAGWRITER)
 - App Clip Qrcode
   - [App Clip Code Generator](https://download.developer.apple.com/Developer_Tools/App_Clip_Code_Generator/App_Clip_Code_Generator.dmg)
-  - [AppClipCodeGenerator macOS App](https://github.com/alfianlosari/AppClipCodeGenerator)
+  - [App Clip Code Generator macOS App](https://github.com/alfianlosari/AppClipCodeGenerator)
