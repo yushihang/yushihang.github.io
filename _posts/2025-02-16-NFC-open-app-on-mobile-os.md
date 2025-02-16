@@ -2,7 +2,7 @@
 layout: post
 title: 在移动操作系统(iOS / Android)中通过设备触碰NFC标签打开App并进行跳转
 subtitle: 关于支付宝"碰一下"功能的实现细节猜测
-categories: Android iOS NFC 碰一下
+categories: Android iOS NFC
 tags: [Web3, PrivadoID, polygonID, ZKProof, Cross-Chain, Verification]
 ---
 
@@ -101,13 +101,28 @@ iOS: [Building an NFC Tag-Reader App](https://developer.apple.com/documentation/
 
 我们点击下方的黄色的"Alipay"提示，就可以自动跳转到支付宝 App。
 
+NFC 标签同样也支持 Universal Links / App Links.
+
+参见如下文档：
+
+- [iOS](https://developer.apple.com/documentation/corenfc/adding-support-for-background-tag-reading)
+
+- [Android](https://developer.android.com/develop/connectivity/nfc/nfc?hl=zh-cn#dispatching)
+
 而如果我们把这个链接写入到 NFC 标签里，用 iOS 设备触碰后，会出现如下提示:
 
 ![Universal Link]({{ "assets/images/2025-02-16/alipay_nfc_url.jpg" | absolute url }})
 
 用户点击 iOS 设备顶部的提示后，也可以跳转到支付宝 App, 这个 url 如果附带了其他 param, 整个 url 的 内容都会被传递给 App。
 
-什么是 App Clip，看网页
+但这个体验其实跟支付宝现在的体验是不同的，用户没有这个点击 nfc 提示的额外操作。
+
+###### iOS App Clip
+
+什么是 iOS App Clip，参见<https://developer.apple.com/app-clips/>
+
+对比这个图上的 App Clips 图片和支付宝的半屏图片, 明显看出他们是一样的.
+![App Clip]({{ "assets/images/2025-02-16/app_clips.jpg" | absolute url }})
 
 需要声明一下，我目前没有找到支付宝团队的官方细节剖析，以上的内容都是基于现有文档和可能的技术方案，结合我自己的使用体验进行的推测。
 
