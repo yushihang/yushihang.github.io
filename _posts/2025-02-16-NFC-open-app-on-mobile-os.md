@@ -166,7 +166,9 @@ AppClip 默认可以通过这类链接被拉起: https://appclip.apple.com/id?p=
 
 目前我查看文档后的猜测是,虽然这条数据只有 applicationId,但是具有这个 applicationId 的 App 被系统拉起后，是可以通过 api 主动获取到其他 NDEF 数据的, 而 NDEF 中的 iOS 的 App Clip Url 是有业务参数的，所以 Android App 也可以读取到这部分数据跳转到对应页面。
 
-##### 总结如下，我们对 NFC 碰一下的实现技术猜测:
+##### 总结和后续测试计划
+
+我们对 NFC 碰一下的实现技术猜测:
 
 1. iOS NFC 碰一下打开 App
    App Clip + 自定义 URL (基本确认，待具体实现, 需要网站域名支持)
@@ -205,3 +207,15 @@ AppClip 默认可以通过这类链接被拉起: https://appclip.apple.com/id?p=
   - [Apple Configurator](https://apps.apple.com/us/app/apple-configurator/id1037126344?mt=12)
   - [ipagrabber.py](https://gist.github.com/h4x0r/200de7e899c76da0c712afd18dce8a3b)
   - codesign -d --entitlements :- <any iOS>.app
+- 下载 Android Apk 和分析
+  - [apkmirror](https://www.apkmirror.com)
+  - [apktool](https://apktool.org)
+- 读取和写入 NFC 标签
+  - iOS
+    - [NFC TagInfo](https://apps.apple.com/us/app/nfc-taginfo-by-nxp/id1246143596)
+  - Android
+    - [NFC TagInfo](https://www.nxp.com/design/design-center/software/rfid-developer-resources/the-nfc-taginfo-app-by-nxp:NFC-TAGINFO)
+    - [NFC TagWriter](https://www.nxp.com/design/design-center/software/rfid-developer-resources/nfc-tagwriter-app-by-nxp:NFC-TAGWRITER)
+- App Clip Qrcode
+  - [App Clip Code Generator](https://download.developer.apple.com/Developer_Tools/App_Clip_Code_Generator/App_Clip_Code_Generator.dmg)
+  - [AppClipCodeGenerator macOS App](https://github.com/alfianlosari/AppClipCodeGenerator)
