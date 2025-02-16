@@ -16,7 +16,7 @@ tags: [Android iOS NFC]
 
 这个不是我们这篇文章重点讨论的内容，可以参见 Android 和 iOS 的如下文档
 
-Android: [Near field communication] (https://developer.android.com/develop/connectivity/nfc)
+Android: [Near field communication](https://developer.android.com/develop/connectivity/nfc)
 
 iOS: [Building an NFC Tag-Reader App](https://developer.apple.com/documentation/corenfc/building-an-nfc-tag-reader-app)
 
