@@ -204,6 +204,10 @@ Apple 的文档里提到，Advanced App Clip Experiences 的部分功能是需�
 
    ![NFC Chips]({{"/assets/images/2025-02-16/nfc_chips.jpg" | absolute url }})
 
+   从这里可以看出，我测试的 这个支付宝点餐的静态 NFC Tag 目前使用的 NFC 芯片为 NTag 215, 容量为 492 字节。
+
+   动态 NFC Tag 的设备待测试。
+
 ##### 数据安全问题
 
 考虑到数据安全问题，nfc tag 中应该不要存放敏感数据，而是存放在网站后台，nfc tag 中只提供网页 param，用户需要鉴权后才能访问到。
@@ -234,3 +238,10 @@ Apple 的文档里提到，Advanced App Clip Experiences 的部分功能是需�
 - App Clip Qrcode
   - [App Clip Code Generator](https://download.developer.apple.com/Developer_Tools/App_Clip_Code_Generator/App_Clip_Code_Generator.dmg)
   - [App Clip Code Generator macOS App](https://github.com/alfianlosari/AppClipCodeGenerator)
+- Apple Universal Links Validator
+  `curl -v https://app-site-association.cdn-apple.com/a/v1/render.alipay.com`
+  ```bash
+  {"appclips":{"apps":["8H6B3SFEU4.com.alipay.iphoneclient.clip"]},"applinks":{"apps":[],"details":[{"appID":"8H6B3SFEU4.com.alipay.iphoneclient","paths":["p/s/i/?scheme=*","p/s/ulink/*"]},{"appID":"LQ38NAVXP6.com.alipay.wallet.rc","paths":["p/s/i/.*scheme=*","p/s/ulink/*"]},{"appID":"LQ38NAVXP6.com.alipay.wallet.test","paths":["p/s/i/\\?scheme=*","p/s/ulink/*"]}]}}
+  ```
+- Android App Links Validator
+  <https://developer.android.com/training/app-links/verify-android-applinks
