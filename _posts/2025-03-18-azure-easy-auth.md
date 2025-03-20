@@ -22,7 +22,11 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
 ![Architechture]({{ "/assets/images/2025-03-20/architecture.png" | absolute url }})
 
-### 按我理解后扩充的架构图
+### 按我理解后扩充的架构图(本地调试模式)
+
+![local]({{ "/assets/images/2025-03-20/local.jpg" | absolute url }})
+
+### 按我理解后扩充的架构图(Azure 部署模式)
 
 ![brief]({{ "/assets/images/2025-03-20/brief.jpg" | absolute url }})
 
