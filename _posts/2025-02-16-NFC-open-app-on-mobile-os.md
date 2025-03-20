@@ -3,7 +3,7 @@ layout: post
 title: 在移动操作系统(iOS / Android)中通过设备触碰 NFC 标签打开 App 并进行跳转
 subtitle:
 categories: Android iOS NFC
-tags: [Android iOS NFC]
+tags: [Android, iOS, NFC]
 ---
 
 ## 在移动操作系统(iOS / Android)中通过设备触碰 NFC 标签打开 App 并进行跳转
