@@ -18,7 +18,7 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
 ![front-end-app-service-to-back-end-app-service-authentication]({{ "/assets/images/2025-03-20/front-end-app-service-to-back-end-app-service-authentication.png" | absolute url }})
 
-![Architechture]({{ "/assets/images/2025-03-20/architecture.pngg" | absolute url }})
+![Architechture]({{ "/assets/images/2025-03-20/architecture.png" | absolute url }})
 
 ### 关于通过将 key store 从 file 修改为 blob 来规避多个 instance 下 accesskey 不同步问题的文档
 
