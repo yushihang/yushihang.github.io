@@ -34,6 +34,99 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
 ![sequence]({{ "/assets/images/2025-03-20/sequence.jpg" | absolute url }})
 
+0. 前后端服务对应的 Azure App Service 都启用了 Easy Auth
+
+1. 用户访问前端服务 URL（例如 https://your-front-end-web-app.azurewebsites.net）。
+2. Easy Auth Middleware（内置在 Azure App Service）拦截请求，检测到 没有 Session Token（Cookie 不存在或已过期）。
+
+   - 返回 302 重定向到身份提供商（IdP）（Microsoft、Google、Facebook、X 等）。
+   - 这个 URL 包含 redirect_uri，即登录成功后返回的地址。
+
+3. 浏览器被重定向到身份提供商的登录页面:
+
+   - 例如，Azure AD 登录 URL：
+
+   ```bash
+   https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/authorize
+   ?client_id=YOUR_CLIENT_ID
+   &response_type=code
+   &redirect_uri=https://yourapp.azurewebsites.net/.auth/login/aad/callback
+   &scope=SCOPE
+   ```
+
+4. 用户输入凭据，身份提供商认证成功后，重定向回 Easy Auth 处理的回调 URL
+
+   ```bash
+   https://yourapp.azurewebsites.net/.auth/login/aad/callback?code=AUTHORIZATION_CODE
+   ```
+
+   Authorization Code 由身份提供商颁发。
+
+5. 浏览器按照 302 重定向请求的 URL，访问前端服务
+   这一步仍然是在 Easy Auth Middleware 里处理。
+
+6. Easy Auth Middleware 处理请求，并使用 Authorization Code 向身份提供商获取 access Token / id token / refresh token / expires in
+   Easy Auth 负责存储 Token，不会直接暴露给前端
+
+   - 例如，Azure AD 发送的请求:
+
+   ```bash
+   POST https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token
+    Content-Type: application/x-www-form-urlencoded
+
+    client_id=YOUR_CLIENT_ID
+    &grant_type=authorization_code
+    &code=AUTHORIZATION_CODE
+    &redirect_uri=https://yourapp.azurewebsites.net/.auth/login/aad/callback
+    &client_secret=YOUR_CLIENT_SECRET
+   ```
+
+   - 返回的 Token 信息:
+
+   ```json
+   {
+     "access_token": "ACCESS_TOKEN",
+     "id_token": "ID_TOKEN",
+     "refresh_token": "REFRESH_TOKEN",
+     "expires_in": 3600
+   }
+   ```
+
+7. Easy Auth Middleware 生成 Session Token，并通过 Set-Cookie 头返回给浏览器
+   Session Token (Cookie: AppServiceAuthSession)用于后续请求的身份验证：
+
+8. 浏览器在后续 Http 请求中包含 Session Token（Cookie），并访问前端服务。
+
+9. Easy Auth Middleware 拦截请求，检测到 Session Token, 并确认是否过期。
+
+   - 如果 Session Token 过期，返回 302 重定向到身份提供商的登录页面。(跳转到步骤 2)
+
+10. Easy Auth Middleware 根据 Session Token 中的信息，从存储中获取 access Token / id token / refresh token / expires in， 并将其添加到 Http Header 中。
+
+11. 前端服务从 Http Header 中获取 access token 并判断其是否有效
+    access token 的有效期可以使用 jwt decode 后的 exp 字段判断，也可以从 http header 中获取 expires_in 字段判断。
+12. 前端服务使用 access token 调用后端服务的 API。
+    并将 access token 使用 Bearer 认证方式添加到 Http Header 中。
+
+    ```bash
+    Authorization: Bearer ACCESS_TOKEN
+    ```
+
+13. 后端服务的 Easy Auth Middleware 拦截请求，检测到 header 中的 Bearer access token, 并确认是否有效。
+    如果 access token 过期/无效/不存在，返回 401 错误。
+    如果 access token 有效，Easy Auth Middleware 从 Http Header 中获取 access token 并将其添加到 Http Header 中。(与步骤 10 类似)
+
+14. 后端服务的逻辑获取 header 中的 Bearer access token。
+
+15. 后端服务使用 access token 调用 IdP 服务的 API 并获取用户信息。
+
+16. 后端服务如果需要调用另一个后端服务的 API，也需要将 access token 使用 Bearer 认证方式添加到 Http Header 中。
+    ```bash
+    Authorization: Bearer ACCESS_TOKEN
+    ```
+
+### Access Token 过期后刷新的逻辑
+
 ### 关于通过将 key store 从 file 修改为 blob 来规避多个 instance 下 accesskey 不同步问题的文档
 
 <https://stackoverflow.com/questions/69385054/azure-app-service-authentication-token-not-refreshing-after-calling-auth-refre>
