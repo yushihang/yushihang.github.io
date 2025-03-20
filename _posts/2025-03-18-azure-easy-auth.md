@@ -127,6 +127,8 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
 ### Access Token 过期后刷新的逻辑
 
+![sequence]({{ "/assets/images/2025-03-20/refresh.jpg" | absolute url }})
+
 ### 关于通过将 key store 从 file 修改为 blob 来规避多个 instance 下 accesskey 不同步问题的文档
 
 <https://stackoverflow.com/questions/69385054/azure-app-service-authentication-token-not-refreshing-after-calling-auth-refre>
