@@ -149,6 +149,14 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
 说明: 我们遇到的现象是，只有前端服务对应的 App Service Plan 启用了 Scale out 到多个 instance，才会出现刷新 token 失败的问题。
 
+步骤 1 ～ 11 与上面的流程图一致。
+步骤 12 时，前端服务从 Http Header 中获取 access token 并判断其是否有效
+此时发现的 token 与步骤 4 拿到的 token 内容一模一样，仍然是无效的， 并没有拿到刷新后的 token。
+
+这看起来非常奇怪
+
+按照我们的多次测试，以及对官方文档的学习，加上和 Azure 技术支持的沟通，我们猜测的情况如下。
+
 ### 关于通过将 key store 从 file 修改为 blob 来规避多个 instance 下 accesskey 不同步问题的文档
 
 <https://stackoverflow.com/questions/69385054/azure-app-service-authentication-token-not-refreshing-after-calling-auth-refre>
