@@ -42,6 +42,7 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
    - 返回 302 重定向到身份提供商（IdP）（Microsoft、Google、Facebook、X 等）。
    - 这个 URL 包含 redirect_uri，即登录成功后返回的地址。
+     <br>
 
 3. 浏览器被重定向到身份提供商的登录页面:
 
@@ -190,6 +191,7 @@ tags: [FrontEnd, Web, Azure, OAuth]
 ### 一些思考
 
 ![Architechture]({{ "/assets/images/2025-03-20/architecture.png" | absolute url }})
+
 如果多个 App Service Instance 会导致 token refresh 和 token 管理不同步的话，和这个图的描述是否有矛盾呢？
 从这个图上看 token store 是一个共享的资源，为什么会导致不同步呢？
 
@@ -206,7 +208,9 @@ tags: [FrontEnd, Web, Azure, OAuth]
 按我们的假设, 可能可以这么理解
 
 使用 file storage 作为 key store 的话
+
 ![refresh-fail]({{ "/assets/images/2025-03-20/file-storage-token-store.jpg" | absolute url }})
 
 使用 blob storage 作为 key store 的话
+
 ![refresh-fail]({{ "/assets/images/2025-03-20/blob-storage-token-store.jpg" | absolute url }})
