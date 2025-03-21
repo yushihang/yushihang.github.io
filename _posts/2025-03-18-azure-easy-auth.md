@@ -204,3 +204,9 @@ tags: [FrontEnd, Web, Azure, OAuth]
 目前我们正在尝试这个方案
 
 按我们的假设, 可能可以这么理解
+
+使用 file storage 作为 key store 的话
+![refresh-fail]({{ "/assets/images/2025-03-20/file-storage-token-store.jpg" | absolute url }})
+
+使用 blob storage 作为 key store 的话
+![refresh-fail]({{ "/assets/images/2025-03-20/blob-storage-token-store.jpg" | absolute url }})
