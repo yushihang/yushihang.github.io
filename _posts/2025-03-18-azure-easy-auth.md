@@ -101,29 +101,29 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
 9. Easy Auth Middleware 拦截请求，检测到 Session Token, 并确认是否过期。
 
-- 如果 Session Token 过期，返回 302 重定向到身份提供商的登录页面。(跳转到步骤 2)
+   - 如果 Session Token 过期，返回 302 重定向到身份提供商的登录页面。(跳转到步骤 2)
 
-11. Easy Auth Middleware 根据 Session Token 中的信息，从存储中获取 access Token / id token / refresh token / expires in， 并将其添加到 Http Header 中。
+10. Easy Auth Middleware 根据 Session Token 中的信息，从存储中获取 access Token / id token / refresh token / expires in， 并将其添加到 Http Header 中。
 
-12. 前端服务从 Http Header 中获取 access token 并判断其是否有效
+11. 前端服务从 Http Header 中获取 access token 并判断其是否有效
     access token 的有效期可以使用 jwt decode 后的 exp 字段判断，也可以从 http header 中获取 expires_in 字段判断。
 
-13. 前端服务使用 access token 调用后端服务的 API。
+12. 前端服务使用 access token 调用后端服务的 API。
     并将 access token 使用 Bearer 认证方式添加到 Http Header 中。
 
     ```bash
     Authorization: Bearer ACCESS_TOKEN
     ```
 
-14. 后端服务的 Easy Auth Middleware 拦截请求，检测到 header 中的 Bearer access token, 并确认是否有效。
+13. 后端服务的 Easy Auth Middleware 拦截请求，检测到 header 中的 Bearer access token, 并确认是否有效。
     如果 access token 过期/无效/不存在，返回 401 错误。
     如果 access token 有效，Easy Auth Middleware 从 Http Header 中获取 access token 并将其添加到 Http Header 中。(与步骤 10 类似)
 
-15. 后端服务的逻辑获取 header 中的 Bearer access token。
+14. 后端服务的逻辑获取 header 中的 Bearer access token。
 
-16. 后端服务使用 access token 调用 IdP 服务的 API 并获取用户信息。
+15. 后端服务使用 access token 调用 IdP 服务的 API 并获取用户信息。
 
-17. 后端服务如果需要调用另一个后端服务的 API，也需要将 access token 使用 Bearer 认证方式添加到 Http Header 中。
+16. 后端服务如果需要调用另一个后端服务的 API，也需要将 access token 使用 Bearer 认证方式添加到 Http Header 中。
     ```bash
     Authorization: Bearer ACCESS_TOKEN
     ```
