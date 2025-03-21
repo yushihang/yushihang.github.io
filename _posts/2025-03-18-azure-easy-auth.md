@@ -129,6 +129,26 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
 ![sequence]({{ "/assets/images/2025-03-20/refresh.jpg" | absolute url }})
 
+1. 浏览器在 Http 请求中包含 Session Token（Cookie），并访问前端服务。
+2. Easy Auth Middleware 拦截请求，检测到 Session Token, 并确认是否过期。
+   - 如果 Session Token 过期，返回 302 重定向到身份提供商的登录页面。
+3. Easy Auth Middleware 根据 Session Token 有效, 并根据 Session Token，从存储中获取 access Token / id token / refresh token / expires in， 并将其添加到 Http Header 中。
+4. 前端服务从 Http Header 中获取 access token 并判断其是否有效(此时发现已过期)
+5. 前端服务发现 access token 过期，返回 207 状态码
+6. 浏览器收到 207 后，调用/.auth/refresh 接口刷新 access token
+7. refresh 请求被 Easy Auth Middleware 处理，从 IdP 拿到刷新后 access token
+8. Easy Auth Middleware 返回 http 200 状态码
+9. 浏览器收到 200 后，重新进行步骤 1 的 http 请求
+10. 同步骤 2
+11. 同步骤 3
+12. 前端服务从 Http Header 中获取 access token 并判断其是否有效(此时发现未过期)
+
+### 我们遇到的刷新 token 失败的问题
+
+![refresh-fail]({{ "/assets/images/2025-03-20/refresh-fail.jpg" | absolute url }})
+
+说明: 我们遇到的现象是，只有前端服务对应的 App Service Plan 启用了 Scale out 到多个 instance，才会出现刷新 token 失败的问题。
+
 ### 关于通过将 key store 从 file 修改为 blob 来规避多个 instance 下 accesskey 不同步问题的文档
 
 <https://stackoverflow.com/questions/69385054/azure-app-service-authentication-token-not-refreshing-after-calling-auth-refre>
