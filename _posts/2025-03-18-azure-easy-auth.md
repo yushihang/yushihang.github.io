@@ -169,8 +169,19 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
 ![ARR]({{ "/assets/images/2025-03-20/arr.jpg" | absolute url }})
 
+这样可以保证多个 instance 下的 access token 和 token 的 refresh 操作不会出现不同步的问题。
+
+![refresh-fail]({{ "/assets/images/2025-03-20/arr-fix-issue.jpg" | absolute url }})
+
+### 一些思考
+
+![Architechture]({{ "/assets/images/2025-03-20/architecture.png" | absolute url }})
+如果多个 App Service Instance 会导致 token refresh 和 token 管理不同步的话，和这个图的描述是否有矛盾呢？
+从这个图上看 token store 是一个共享的资源，为什么会导致不同步呢？
+
 ### 关于通过将 key store 从 file 修改为 blob 来规避多个 instance 下 accesskey 不同步问题的文档
 
+我们找到了如下文档，里面提到如果不启用 ARR 的话，也可以通过将 key store 从 file 修改为 blob 来规避多个 instance 下 accesskey 不同步问题。
 <https://stackoverflow.com/questions/69385054/azure-app-service-authentication-token-not-refreshing-after-calling-auth-refre>
 
 <https://johnnyreilly.com/easy-auth-tokens-survive-releases-on-linux-azure-app-service>
