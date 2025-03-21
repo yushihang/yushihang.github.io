@@ -145,7 +145,7 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
 ### 我们遇到的刷新 token 失败的问题
 
-![refresh-fail]({{ "/assets/images/2025-03-20/refresh-fail.jpg" | absolute url }})
+![refresh-fail]({{ "/assets/images/2025-03-20/refresh-failed.jpg" | absolute url }})
 
 说明: 我们遇到的现象是，只有前端服务对应的 App Service Plan 启用了 Scale out 到多个 instance，才会出现刷新 token 失败的问题。
 
@@ -157,9 +157,9 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
 按照我们的多次测试，以及对官方文档的学习，加上和 Azure 技术支持的沟通，我们猜测的情况如下。
 
-![refresh-fail]({{ "/assets/images/2025-03-20/refresh-fail-1.jpg" | absolute url }})
+![refresh-fail]({{ "/assets/images/2025-03-20/refresh-failed-1.jpg" | absolute url }})
 
-![refresh-fail]({{ "/assets/images/2025-03-20/refresh-fail-2.jpg" | absolute url }})
+![refresh-fail]({{ "/assets/images/2025-03-20/refresh-failed-2.jpg" | absolute url }})
 
 简单的说，也就是因为多个 instance 下的 access token 和 token 的 refresh 操作不同步，导致刷新 token 失败。
 
