@@ -157,6 +157,18 @@ tags: [FrontEnd, Web, Azure, OAuth]
 
 按照我们的多次测试，以及对官方文档的学习，加上和 Azure 技术支持的沟通，我们猜测的情况如下。
 
+![refresh-fail]({{ "/assets/images/2025-03-20/refresh-fail-1.jpg" | absolute url }})
+
+![refresh-fail]({{ "/assets/images/2025-03-20/refresh-fail-2.jpg" | absolute url }})
+
+简单的说，也就是因为多个 instance 下的 access token 和 token 的 refresh 操作不同步，导致刷新 token 失败。
+
+### 解决方案
+
+其中一种解决方案是启用 ARR (Application Request Routing)，将所有具有相同 Session Token Cookie 的请求都路由到同一个 instance 下。
+
+![ARR]({{ "/assets/images/2025-03-20/arr.jpg" | absolute url }})
+
 ### 关于通过将 key store 从 file 修改为 blob 来规避多个 instance 下 accesskey 不同步问题的文档
 
 <https://stackoverflow.com/questions/69385054/azure-app-service-authentication-token-not-refreshing-after-calling-auth-refre>
