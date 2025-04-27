@@ -71,6 +71,11 @@ tags: [FrontEnd, Web, Javascript, Javascript]
     - `Function.prototype.__proto__ === Object.prototype`
     - `Object.__proto__ === Function.prototype`
 
-关系图:
+### prototype chain 图示
+
+- 图 1:
 
 ![js-proto-chain]({{ "/assets/images/2025-04-27/obj-fun.jpg" | absolute url }})
+
+- 图 2:
+  ![js-proto-chain]({{ "/assets/images/2025-04-27/obj-fun-1.jpg" | absolute url }})
