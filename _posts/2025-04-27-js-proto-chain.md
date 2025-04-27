@@ -77,5 +77,11 @@ tags: [FrontEnd, Web, Javascript, Javascript]
 
 ![js-proto-chain]({{ "/assets/images/2025-04-27/obj-fun.jpg" | absolute url }})
 
-- 图 2:
+- 图 2 (加入 obj):
   ![js-proto-chain]({{ "/assets/images/2025-04-27/obj-fun-1.jpg" | absolute url }})
+
+- 图 3 (加入 Foo):
+  ![js-proto-chain]({{ "/assets/images/2025-04-27/obj-fun-2.jpg" | absolute url }})
+
+- 图 3 (加入 foo):
+  ![js-proto-chain]({{ "/assets/images/2025-04-27/obj-fun-2.jpg" | absolute url }})
