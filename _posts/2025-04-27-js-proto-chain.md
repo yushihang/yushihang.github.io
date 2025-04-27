@@ -19,6 +19,8 @@ tags: [FrontEnd, Web, Javascript, Javascript]
 而在 JS 中, 也同样存在类似的 prototype chain, 如下图所示
 ![js-proto-chain]({{ "/assets/images/2025-04-27/js-prototype-chain.jpg" | absolute url }})
 
+图的来源是 <https://azole.medium.com/javascript-prototype-chain-ee5a90f6fa5e>
+
 这个图看起来比较复杂，我们试着来拆解一下
 
 ### prototype 和 **proto** 的区别
@@ -85,3 +87,14 @@ tags: [FrontEnd, Web, Javascript, Javascript]
 
 - 图 3 (加入 foo):
   ![js-proto-chain]({{ "/assets/images/2025-04-27/obj-fun-2.jpg" | absolute url }})
+
+### 个人的理解和总结
+
+- 对象存在\_\_proto\_\_
+- 函数存在 prototype
+- 函数同时是对象, 所以函数也有\_\_proto\_\_
+- 函数的 prototype.constructor 指向函数本身
+- 函数的\_\_proto\_\_ 指向 Function.prototype
+- \_\_proto\_\_ 是继承关系的关键, 当访问对象属性时，JS 引擎会沿着 \_\_proto\_\_ 链向上查找
+- Object.prototype.\_\_proto\_\_ 指向 null, 为继承关系的终点
+- 当使用 new 创建实例时，实例的 \_\_proto\_\_ 会指向构造函数的 prototype
